@@ -62,16 +62,7 @@
                 
               </div>
             </nav>
-    </header>
-
-
-    {% endblock %}
-    <!--/****** end Header *********/-->
-
-    <!--/****** Main Content *********/-->
-    {% block content %}
-    <!-- MODAL -->
-  <div id="modal1" class="modal">
+            <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Modal Header</h4>
         <p>A bunch of text</p>
@@ -81,12 +72,22 @@
       </div>
     </div>
 
+    </header>
+
+
+    {% endblock %}
+    <!--/****** end Header *********/-->
+
+    <!--/****** Main Content *********/-->
+    {% block content %}
+    <!-- MODAL -->
+  
     {% endblock %}
     <!--/****** end Content *********/-->
   
     <!--/****** Footer *********/-->
     {% block footer %}
-      <footer class="page-footer">
+      <footer class="page-footer" style="margin-top: 0px;">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
