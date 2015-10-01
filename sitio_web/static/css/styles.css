@@ -163,4 +163,23 @@ atom:hover .center {
 	background-color: transparent;
 }
 
+h5{
+  font-size: 1.2rem !important;
+}
+
+.nav_insti{
+  background-color: #00437A !important;
+  height:  108px !important;
+  border-bottom: 3px solid #D18C3F;
+  border-top: 2px solid #8E1315;
+}
+.foor_pro{
+   margin-top: 0px;
+  background-color: #00437A !important;
+  border-bottom: 3px solid #D18C3F;
+  border-top: 5px solid rgba(142, 19, 21, 0.86);
+}
+.back{
+    height: 103px;
+}
 
