@@ -1,12 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="">
+	<meta charset="UTF-8">
+	<title>Unimag</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+	.nav-wrapper,.page-footer{
+		background-color: #003F72 !important;
+	}
+	</style>
+	<style>
+[class*="atomo"], .center {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+atom {
+  cursor: pointer;
+}
+
+[class*="atomo"] {
+  animation: glow 3s linear infinite;
+  border-radius: 50%;
+  border: 0.6em solid #000;
+  border-top: 1.5em solid #000;
+  border-bottom: 1.5em solid #000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.3);
+  height: 30em;
+  transition: 1s transform ease-in-out;
+  width: 30em;
+}
+[class*="atomo"] div {
+  animation: rotate 2s linear infinite;
+  border-radius: 50%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+[class*="atomo"] div:after {
+  animation: squash 2s linear infinite;
+  -webkit-transform: scale(3, 1);
+  -moz-transform: scale(3, 1);
+  -ms-transform: scale(3, 1);
+  -o-transform: scale(3, 1);
+  transform: scale(3, 1);
+  border-radius: 50%;
+  content: '';
+  left: 50%;
+  height: 3em;
+  margin-left: -1.5em;
+  opacity: 0.8;
+  position: absolute;
+  top: -1.2em;
+  width: 3em;
+}
+
+.atomo1 {
+  transform: rotate(120deg) scale(0.333, 1);
+}
+.atomo1 div:after {
+  background: #2ecc71;
+  box-shadow: 0 0 20px #2ecc71;
+}
+atom:hover .atomo1 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(0.33333, 0.33333) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo1 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+
+.atomo2 {
+  transform: rotate(240deg) scale(0.333, 1);
+}
+.atomo2 div:after {
+  background: #3498db;
+  box-shadow: 0 0 20px #3498db;
+}
+atom:hover .atomo2 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(0.66667, 0.66667) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo2 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+
+.atomo3 {
+  transform: rotate(360deg) scale(0.333, 1);
+}
+.atomo3 div:after {
+  background: #e74c3c;
+  box-shadow: 0 0 20px #e74c3c;
+}
+atom:hover .atomo3 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(1, 1) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo3 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+.center {
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #000;
+  height: 3em;
+  box-shadow: 0 0 10px #000, inset 0 0 20px #000;
+  transition: 1s transform ease-in-out;
+  width: 3em;
+}
+atom:hover .center {
+  transform: translate(0, 0.5em);
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 0 #000, 0 0 10px #000, inset 0 0 20px #000;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #000, 0 0 30px #000, inset 0 0 20px #000;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes squash {
+  0%,50%, 100% {
+    transform: scale(1, 1);
+    top: -2.6em;
+  }
+
+  25%, 75% {
+    transform: scale(2, 1);
+    top: -1.2em;
+  }
+}
+
+.parallax-container {
+      height: 500px;
+}
+.slider{
+	height: 600px !important;
+}
+.slides{
+	height: 600px !important;
+}
+#vision{
+	background-color: #F0F2F4
+}
+#logoFisica{
+	background-color: transparent;
+}
+
+
+
+</style>
 </head>
 <body>
-	hola chamo !
+<header>
+		
+						<ul id="dropdown1" class="dropdown-content">
+						  	<li><a href="fisicaMecanica.html">Fisica Mecánica</a></li>
+						    <li><a href="fisicaCalor.html">Calor & Ondas</a></li>
+						    <li><a href="fisicaElectricidad.html">Electricidad y Magnetismo</a></li> 
+						  <li class="divider"></li>
+						  
+						</ul>
+						<nav>
+						  <div class="nav-wrapper">
+						    <a href="#!" class="brand-logo">Logo<!-- <img src="img/unimag.png" width="50%" height="50%"> --></a>
+						   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+						    <ul class="right hide-on-med-and-down">
+						      <li><a href="index.html">Inicio</a></li>
+						      
+						      
+
+						      
+
+						     <!--  Dropdown Trigger -->
+						      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Cursos<i class="material-icons right">arrow_drop_down</i></a></li>
+						      <li><a data-target="modal1" class="modal-trigger">Foro</a></li>
+						      <li><a href="contacto.html">Contacto</a></li>
+						      
+						    </ul>
+						    
+						  </div>
+						</nav>
+					
+				
+			
+		
+</header>
+	<!-- MODAL -->
+	<div id="modal1" class="modal">
+	    <div class="modal-content">
+	      <h4>Modal Header</h4>
+	      <p>A bunch of text</p>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	    </div>
+  	</div>
+  	<!-- INICIO DE PARALLAX -->
+    <div class="parallax-container">
+    <div class="parallax">
+    	<div class="slider" style="ma">
+		    <ul class="slides">
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+		        <div class="caption center-align">
+		          <h3>This is our big Tagline!</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+		        <div class="caption left-align">
+		          <h3>Left Aligned Caption</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+		        <div class="caption right-align">
+		          <h3>Right Aligned Caption</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+		        <div class="caption center-align">
+		          <h3>This is our big Tagline!</h3>
+		          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+
+    </div>
+  </div>
+  <div class="section">
+    
+    	<div id="mission">
+    		<div class="row container">
+		    	<div class="col s6">
+		    	
+			      	<h2 class="header flow-text" style="font-size:40px;">Misión</h2>
+			      	<p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. </p>
+		    	</div>
+		    	<div class="col s6">	
+		    		<img id="logoFisica"src="img/logo.png">
+		    	</div>
+    		</div>
+    
+    	</div>
+    <div id="vision">
+    	
+	    <div class="row container">
+	    	<div class="col s6">
+	    		<div style="background-color: #3e3b66;
+				  background-image: -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(0%, #3e3b66), color-stop(100%, #000000));
+				  background-image: -webkit-radial-gradient(center, ellipse cover, #FDFEFE 0%, #F0F2F4 100%);
+				  background-image: -moz-radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);
+				  background-image: -o-radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);
+				  background-image: radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);position: relative;height: 500px;width: 100%;">
+
+				<atom><div class="center"></div><div class="atomo1"><div></div></div><div class="atomo2"><div></div></div><div class="atomo3"><div></div></div></atom></div>
+	    	  
+	    	</div>
+	    	<div class="col s6 ">
+	    		<h2 class="header flow-text" style="font-size:40px;">Visión</h2>
+	      		<p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Lorem ipsum dolor sit amet, .</p>
+	    	</div>
+	    </div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://lorempixel.com/580/250/nature/2"></div>
+  </div>
+      
+	
+
+	<!-- Formulario -->
+	
+
+	<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+        
+	
+
+	
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  	<script>
+
+	  $(document).ready(function(){
+	      $('.parallax').parallax();
+	  });
+
+	  $(document).ready(function(){
+	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	    $('.modal-trigger').leanModal();
+	  });
+	  $(document).ready(function(){
+	      $('.slider').slider({full_width: true});
+	      $('.slider').slider({indicators:false});
+	    });
+        
+  	</script>	
 </body>
 </html>
