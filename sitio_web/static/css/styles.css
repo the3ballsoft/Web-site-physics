@@ -1,8 +1,9 @@
-	.nav-wrapper,.page-footer{
-		background-color: #003F72 !important;
-	}
-	</style>
+
+	
 	<style>
+    .nav-wrapper,.page-footer{
+    background-color: #003F72 !important;
+  }
 [class*="atomo"], .center {
   bottom: 0;
   left: 0;
