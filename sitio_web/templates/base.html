@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+
+    <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static "css/icon.css" %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% block extracss  %}
+
+    {% endblock %}
+
+    <title>
+      {% block title  %}
+       
+      {% endblock %}
+    </title>
+    <!--
+     _   _          _____ _           _ _            __ _
+    | |_| |__   ___|___ /| |__   __ _| | |___  ___  / _| |_
+    | __| '_ \ / _ \ |_ \| '_ \ / _` | | / __|/ _ \| |_| __|
+    | |_| | | |  __/___) | |_) | (_| | | \__ \ (_) |  _| |_
+     \__|_| |_|\___|____/|_.__/ \__,_|_|_|___/\___/|_|  \__|
+
+      © 2015 | Desarrollado por The3Ballsoft
+
+    -->
+  </head>
+
+  <body>
+    <!--/****** Header  *********/-->
+    {% block header %}
+    <header>
+    
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="fisicaMecanica.html">Fisica Mecánica</a></li>
+                <li><a href="fisicaCalor.html">Calor & Ondas</a></li>
+                <li><a href="fisicaElectricidad.html">Electricidad y Magnetismo</a></li> 
+              <li class="divider"></li>
+              
+            </ul>
+            <nav>
+              <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo<!-- <img src="img/unimag.png" width="50%" height="50%"> --></a>
+               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                  <li><a href="index.html">Inicio</a></li>
+                  
+                  
+
+                  
+
+                 <!--  Dropdown Trigger -->
+                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Cursos<i class="material-icons right">arrow_drop_down</i></a></li>
+                  <li><a data-target="modal1" class="modal-trigger">Foro</a></li>
+                  <li><a href="contacto.html">Contacto</a></li>
+                  
+                </ul>
+                
+              </div>
+            </nav>
+    </header>
+
+
+    {% endblock %}
+    <!--/****** end Header *********/-->
+
+    <!--/****** Main Content *********/-->
+    {% block content %}
+    <!-- MODAL -->
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+    {% endblock %}
+    <!--/****** end Content *********/-->
+  
+    <!--/****** Footer *********/-->
+    {% block footer %}
+      <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+    {% endblock %}
+    <!--/****** end Footer *********/-->
+
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+
+    <!--/****** extrajs *********/-->
+    {% block extrajs  %}
+    <script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
+    $(document).ready(function(){
+        $('.slider').slider({full_width: true});
+        $('.slider').slider({indicators:false});
+      });
+        
+    </script>
+    {% endblock %}
+    <!--/****** extrajs *********/-->
+
+  </body>
+</html>

@@ -1,0 +1,165 @@
+	.nav-wrapper,.page-footer{
+		background-color: #003F72 !important;
+	}
+	</style>
+	<style>
+[class*="atomo"], .center {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+atom {
+  cursor: pointer;
+}
+
+[class*="atomo"] {
+  animation: glow 3s linear infinite;
+  border-radius: 50%;
+  border: 0.6em solid #000;
+  border-top: 1.5em solid #000;
+  border-bottom: 1.5em solid #000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.3);
+  height: 30em;
+  transition: 1s transform ease-in-out;
+  width: 30em;
+}
+[class*="atomo"] div {
+  animation: rotate 2s linear infinite;
+  border-radius: 50%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+[class*="atomo"] div:after {
+  animation: squash 2s linear infinite;
+  -webkit-transform: scale(3, 1);
+  -moz-transform: scale(3, 1);
+  -ms-transform: scale(3, 1);
+  -o-transform: scale(3, 1);
+  transform: scale(3, 1);
+  border-radius: 50%;
+  content: '';
+  left: 50%;
+  height: 3em;
+  margin-left: -1.5em;
+  opacity: 0.8;
+  position: absolute;
+  top: -1.2em;
+  width: 3em;
+}
+
+.atomo1 {
+  transform: rotate(120deg) scale(0.333, 1);
+}
+.atomo1 div:after {
+  background: #2ecc71;
+  box-shadow: 0 0 20px #2ecc71;
+}
+atom:hover .atomo1 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(0.33333, 0.33333) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo1 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+
+.atomo2 {
+  transform: rotate(240deg) scale(0.333, 1);
+}
+.atomo2 div:after {
+  background: #3498db;
+  box-shadow: 0 0 20px #3498db;
+}
+atom:hover .atomo2 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(0.66667, 0.66667) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo2 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+
+.atomo3 {
+  transform: rotate(360deg) scale(0.333, 1);
+}
+.atomo3 div:after {
+  background: #e74c3c;
+  box-shadow: 0 0 20px #e74c3c;
+}
+atom:hover .atomo3 {
+  border: 0.6em solid #000;
+  transform: rotate(0deg) scale(1, 1) perspective(600px) rotateX(60deg);
+}
+atom:hover .atomo3 div:after {
+  animation: none;
+  top: -1.6em;
+  transform: scale(1, 1);
+}
+.center {
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #000;
+  height: 3em;
+  box-shadow: 0 0 10px #000, inset 0 0 20px #000;
+  transition: 1s transform ease-in-out;
+  width: 3em;
+}
+atom:hover .center {
+  transform: translate(0, 0.5em);
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 0 #000, 0 0 10px #000, inset 0 0 20px #000;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #000, 0 0 30px #000, inset 0 0 20px #000;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes squash {
+  0%,50%, 100% {
+    transform: scale(1, 1);
+    top: -2.6em;
+  }
+
+  25%, 75% {
+    transform: scale(2, 1);
+    top: -1.2em;
+  }
+}
+
+.parallax-container {
+      height: 500px;
+}
+.slider{
+	height: 600px !important;
+}
+.slides{
+	height: 600px !important;
+}
+#vision{
+	background-color: #F0F2F4
+}
+#logoFisica{
+	background-color: transparent;
+}
+
+
