@@ -3,58 +3,189 @@
 {% load staticfiles %}
 
 {% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
 {% endblock %}
 
 {% block content %}
 
     <div class="parallax-container">
-    <div class="parallax">
-      <div class="slider" style="ma">
-        <ul class="slides">
-          <li>
-            <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-            <div class="caption center-align">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-            <div class="caption left-align">
-              <h3>Left Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-            <div class="caption right-align">
-              <h3>Right Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-            <div class="caption center-align">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-        </ul>
-      </div>
+    
+       <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{% static "img/photo1.jpg"%}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static "img/photo2.jpg"%}"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static "img/photo3.jpg"%}"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static "img/photo4.jpg"%}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    </div>
+    
   </div>
   <div class="section">
     
       <div id="mission">
-        <div class="row container">
+        <div class="container">
           <div class="col s6">
           
               <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
               <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >{% autoescape off %}{{ data.mision }} {% endautoescape %} </p>
           </div>
           <div class="col s6">  
-            <img id="logoFisica"src="img/logo.png">
+                 <div class="conta">
+                      <div class="leftarm">
+                    <div class="hand">
+                      <span class="lefttriangle"></span>
+                      <div class="lhand"></div>
+                      <span class="righttriangle"></span>
+                      <div class="lfinger">
+                        <div class="lcf"></div>
+                        <div class="leftwrist">
+                          <div class="lw"></div>
+                          <div class="leftelbow">
+                            <div class="celbow"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rightarm">
+                    <div class="mrh1">
+                      <div class="righthand">
+                        <span class="lefttriangle2"></span>
+                        <div class="rhand"></div>
+                        <span class="righttriangle2"></span>
+                        <div class="rfinger">
+                          <div class="rcf">
+                            <div class="envelop">
+                              <div class="arrowdown"></div>
+                              <div class="arrowup"></div>
+                            </div>
+                          </div>
+                          <div class="rightwrist">
+                            <div class="rw"></div>
+                            <div class="rightelbow">
+                              <div class="relbow"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      
+                  </div>
+                  <div class="hbdy">
+                    <div class="bbdy">
+                      <div class="effect1"></div>
+                      <div class="effect2"></div>
+                      <div class="effect3"></div>
+                      <div class="ehbdy">
+                        <div class="opcbdy"></div>
+                        <div class="ebhbdy">
+                          <div class="bebdy">
+                            <div class="opbdy"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="effect4">
+                        <div class="effectaa"></div>
+                        <div class="effectab"></div>
+                        <div class="effectac"></div>
+                      </div>
+                      <div class="effect5">
+                        <div class="effectba"></div>
+                        <div class="effectbb"></div>
+                        <div class="effectbc"></div>
+                      </div>
+                      <div class="effect6">
+                        <div class="effectca"></div>
+                        <div class="effectcb"></div>
+                        <div class="effectcc"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bdy"></div>
+                  <div class="lleg">
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="leftfoot">
+                      <div class="wrc">
+                        <div class="brc">
+                          <div class="wrc2">
+                            <div class="brc2"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="middleleg">
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="middlefoot">
+                      <div class="wrc">
+                        <div class="brc">
+                          <div class="wrc2">
+                            <div class="brc2"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rightleg">
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="legs"></div>
+                    <div class="rightfoot">
+                      <div class="wrc">
+                        <div class="brc">
+                          <div class="wrc2">
+                            <div class="brc2"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                 </div>
           </div>
         </div>
     
@@ -79,6 +210,19 @@
         </div>
       </div>
     </div>
+      <div id="objetives">
+        <div class="row container">
+          <div class="col s6">
+          
+              <h2 class="header flow-text" style="font-size:40px;">Objetivo</h2>
+              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. </p>
+          </div>
+          <div class="col s6">  
+            <img id="logoFisica"src="img/logo.png">
+          </div>
+        </div>
+    
+      </div>
   </div>
   <div class="parallax-container">
     <div class="parallax"><img src="http://lorempixel.com/580/250/nature/2"></div>
@@ -89,5 +233,18 @@
 {% endblock %}
 
 {% block extrajs %}
-
+ <script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
+    $(document).ready(function(){
+        $('.slider').slider({full_width: true});
+        
+      });
+        
+    </script>
 {% endblock %}
