@@ -52,7 +52,7 @@
           <div class="col s6">
           
               <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
-              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. </p>
+              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >{% autoescape off %}{{ data.mision }} {% endautoescape %} </p>
           </div>
           <div class="col s6">  
                  <div class="conta">
@@ -206,7 +206,7 @@
         </div>
         <div class="col s6 ">
           <h2 class="header flow-text" style="font-size:40px;">Visión</h2>
-            <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Lorem ipsum dolor sit amet, .</p>
+            <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important">{% autoescape off %}{{ data.vision }} {% endautoescape %}</p>
         </div>
       </div>
     </div>
