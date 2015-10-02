@@ -7,7 +7,9 @@
     <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/icon.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+<!-- Latest compiled and minified JavaScript -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     {% block extracss  %}
 
@@ -55,9 +57,9 @@
               
                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                  <li class="back" ><a href="index.html">Inicio</a></li>
+                  <li class="back" ><a href="index.html">| Inicio |</a></li>
                   <li class="back"><a data-target="modal1" class="modal-trigger">Noticias</a></li>
-                  <li class="back"><a href="contacto.html">Programas</a></li>
+                  <li class="back"><a href="contacto.html"> Programas</a></li>
                   <li class="back"><a href="contacto.html">Docentes</a></li>
                   <li class="back"><a href="contacto.html">Eventos</a></li>
                   <li class="back"><a href="contacto.html">Contactenos</a></li>
@@ -100,23 +102,23 @@
               <div class="col l4" align="left">
                 <h5 class="white-text">Informacion institucional</h5>
                 <div align="left">
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">- Universidad del magdalena</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">- Admisiones, registro y control</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">- Bienestar universitario</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">- Facultad de ingenieria</a></li>
+                <ul class="list-icon">
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Universidad del magdalena</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Admisiones, registro y control</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Bienestar universitario</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Facultad de ingenieria</a></li>
                 </ul>
                 </div>
               </div>
                <div class="col l4" align="left">
                 <h5 class="white-text">Mapa del sitio</h5>
                 <div align="left">
-              <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Quienes somos ?</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Noticias </a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Foro</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Galeria</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+              <ul class="list-icon">
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Quienes somos ?</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Noticias </a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Foro</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Galeria</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Contacto</a></li>
                 </ul>
                 </div>
               </div>
@@ -147,6 +149,8 @@
 
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+   
+
 
     <!--/****** extrajs *********/-->
     {% block extrajs  %}
@@ -164,7 +168,7 @@
       });
         
 
-        
+
     </script>
     {% endblock %}
     <!--/****** extrajs *********/-->

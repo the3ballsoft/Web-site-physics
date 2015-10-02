@@ -4,6 +4,7 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
@@ -45,7 +46,7 @@
 
     
   </div>
-  <div class="section">
+ <div class="section">
     
       <div id="mission">
         <div class="container">
@@ -54,138 +55,7 @@
               <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
               <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >{% autoescape off %}{{ data.mision }} {% endautoescape %} </p>
           </div>
-          <div class="col s6">  
-                 <div class="conta">
-                      <div class="leftarm">
-                    <div class="hand">
-                      <span class="lefttriangle"></span>
-                      <div class="lhand"></div>
-                      <span class="righttriangle"></span>
-                      <div class="lfinger">
-                        <div class="lcf"></div>
-                        <div class="leftwrist">
-                          <div class="lw"></div>
-                          <div class="leftelbow">
-                            <div class="celbow"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rightarm">
-                    <div class="mrh1">
-                      <div class="righthand">
-                        <span class="lefttriangle2"></span>
-                        <div class="rhand"></div>
-                        <span class="righttriangle2"></span>
-                        <div class="rfinger">
-                          <div class="rcf">
-                            <div class="envelop">
-                              <div class="arrowdown"></div>
-                              <div class="arrowup"></div>
-                            </div>
-                          </div>
-                          <div class="rightwrist">
-                            <div class="rw"></div>
-                            <div class="rightelbow">
-                              <div class="relbow"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                      
-                  </div>
-                  <div class="hbdy">
-                    <div class="bbdy">
-                      <div class="effect1"></div>
-                      <div class="effect2"></div>
-                      <div class="effect3"></div>
-                      <div class="ehbdy">
-                        <div class="opcbdy"></div>
-                        <div class="ebhbdy">
-                          <div class="bebdy">
-                            <div class="opbdy"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="effect4">
-                        <div class="effectaa"></div>
-                        <div class="effectab"></div>
-                        <div class="effectac"></div>
-                      </div>
-                      <div class="effect5">
-                        <div class="effectba"></div>
-                        <div class="effectbb"></div>
-                        <div class="effectbc"></div>
-                      </div>
-                      <div class="effect6">
-                        <div class="effectca"></div>
-                        <div class="effectcb"></div>
-                        <div class="effectcc"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="bdy"></div>
-                  <div class="lleg">
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="leftfoot">
-                      <div class="wrc">
-                        <div class="brc">
-                          <div class="wrc2">
-                            <div class="brc2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="middleleg">
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="middlefoot">
-                      <div class="wrc">
-                        <div class="brc">
-                          <div class="wrc2">
-                            <div class="brc2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rightleg">
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="legs"></div>
-                    <div class="rightfoot">
-                      <div class="wrc">
-                        <div class="brc">
-                          <div class="wrc2">
-                            <div class="brc2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   
-                 </div>
+          <div class="col s6"> 
           </div>
         </div>
     
@@ -224,8 +94,8 @@
     
       </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="http://lorempixel.com/580/250/nature/2"></div>
+  <div class="parallax-container" style="  top: 21px;">
+    <div class="parallax"><img src="{% static "images/unimag.jpg" %}"></div>
   </div>
       	
  

@@ -148,7 +148,9 @@ atom:hover .center {
 }
 
 .parallax-container {
-      height: 500px;
+     height: 350px;
+     border-top: 2px solid rgb(209, 140, 63);
+     border-bottom: 2px solid rgb(123, 26, 35);
 }
 .slider{
 	height: 600px !important;
