@@ -1,7 +1,7 @@
 
 	
 	<style>
-    .nav-wrapper,.page-footer{
+  .nav-wrapper,.page-footer{
     background-color: #003F72 !important;
   }
 [class*="atomo"], .center {
@@ -19,9 +19,9 @@ atom {
 [class*="atomo"] {
   animation: glow 3s linear infinite;
   border-radius: 50%;
-  border: 0.6em solid #000;
-  border-top: 1.5em solid #000;
-  border-bottom: 1.5em solid #000;
+  border: 0.6em solid #003158;
+  border-top: 1.5em solid #003158;
+  border-bottom: 1.5em solid #003158;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.3);
   height: 30em;
   transition: 1s transform ease-in-out;
@@ -56,11 +56,11 @@ atom {
   transform: rotate(120deg) scale(0.333, 1);
 }
 .atomo1 div:after {
-  background: #2ecc71;
-  box-shadow: 0 0 20px #2ecc71;
+  background: #D18C3F;
+  box-shadow: 0 0 20px #D18C3F;
 }
 atom:hover .atomo1 {
-  border: 0.6em solid #000;
+  border: 0.6em solid #003158;
   transform: rotate(0deg) scale(0.33333, 0.33333) perspective(600px) rotateX(60deg);
 }
 atom:hover .atomo1 div:after {
@@ -77,7 +77,7 @@ atom:hover .atomo1 div:after {
   box-shadow: 0 0 20px #3498db;
 }
 atom:hover .atomo2 {
-  border: 0.6em solid #000;
+  border: 0.6em solid #003158;
   transform: rotate(0deg) scale(0.66667, 0.66667) perspective(600px) rotateX(60deg);
 }
 atom:hover .atomo2 div:after {
@@ -94,7 +94,7 @@ atom:hover .atomo2 div:after {
   box-shadow: 0 0 20px #e74c3c;
 }
 atom:hover .atomo3 {
-  border: 0.6em solid #000;
+  border: 0.6em solid #003158;
   transform: rotate(0deg) scale(1, 1) perspective(600px) rotateX(60deg);
 }
 atom:hover .atomo3 div:after {
@@ -158,7 +158,7 @@ atom:hover .center {
 .slides{
 	height: 600px !important;
 }
-#vision{
+.vision{
 	background-color: #F0F2F4
 }
 #logoFisica{

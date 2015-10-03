@@ -8,59 +8,63 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="parallax-container">
-    
+  <!-- beginSlider -->
+    <section>
        <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="{% static "img/photo1.jpg"%}"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <ul class="slides">
+              <li>
+                <img src="{% static "img/photo1.jpg"%}"> <!-- random image -->
+                <div class="caption center-align">
+                  <h3>This is our big Tagline!</h3>
+                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+              </li>
+              <li>
+                <img src="{% static "img/photo2.jpg"%}"> <!-- random image -->
+                <div class="caption left-align">
+                  <h3>Left Aligned Caption</h3>
+                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+              </li>
+              <li>
+                <img src="{% static "img/photo3.jpg"%}"> <!-- random image -->
+                <div class="caption right-align">
+                  <h3>Right Aligned Caption</h3>
+                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+              </li>
+              <li>
+                <img src="{% static "img/photo4.jpg"%}"> <!-- random image -->
+                <div class="caption center-align">
+                  <h3>This is our big Tagline!</h3>
+                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+              </li>
+          </ul>
         </div>
-      </li>
-      <li>
-        <img src="{% static "img/photo2.jpg"%}"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="{% static "img/photo3.jpg"%}"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="{% static "img/photo4.jpg"%}"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
+    </section>
+    <!-- endslider  -->
 
     
-  </div>
- <div class="section">
     
-      <div id="mission">
-        <div class="container">
-          <div class="col s6">
+ <div class="section"> 
+    
+        <div class="mission"> 
           
-              <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
-              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >{% autoescape off %}{{ data.mision }} {% endautoescape %} </p>
-          </div>
-          <div class="col s6"> 
-          </div>
-        </div>
-    
-      </div>
-    <div id="vision">
+            <div class="row container">
+              <div class="col s6">
+                  <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
+                  <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; text-align: justify; font-size: 20px;" ><!-- {% autoescape off %}{{ data.mision }} {% endautoescape %}  -->
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta ducimus alias fugiat accusantium tenetur aliquid totam deleniti. Laboriosam voluptatem accusamus temporibus eos hic quibusdam labore impedit, aperiam sequi molestias! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur asperiores alias natus mollitia sit repellat, accusantium officiis illum molestiae. Quibusdam enim, vero consequatur nam error quae cumque libero corrupti qui.</p>
+              </div>
+              <div class="col s6"> 
+                  <img src="{% static "images/birrete.png"  %}" width="400px" height="500px"> 
+              </div>
+            </div>
+        
+        </div> 
+      
+    <div class="vision">
       
       <div class="row container">
         <div class="col s6">
@@ -76,16 +80,16 @@
         </div>
         <div class="col s6 ">
           <h2 class="header flow-text" style="font-size:40px;">Visión</h2>
-            <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important">{% autoescape off %}{{ data.vision }} {% endautoescape %}</p>
+            <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; text-align: justify; font-size: 20px !important;"><!-- {% autoescape off %}{{ data.vision }} {% endautoescape %} -->
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ipsum commodi, dicta error. Minus, accusantium explicabo est quibusdam repellendus, deleniti totam nisi nam, inventore dolor ex sunt sequi quidem dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus temporibus odit beatae corporis praesentium obcaecati animi optio incidunt distinctio ipsum repudiandae aut, repellendus cum maxime, quae impedit. Tempora, voluptas, rerum!</p>
         </div>
       </div>
     </div>
-      <div id="objetives">
+      <div class="objetives">
         <div class="row container">
-          <div class="col s6">
-          
+          <div class="col s6">  
               <h2 class="header flow-text" style="font-size:40px;">Objetivo</h2>
-              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. </p>
+              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; font-size: 20px !important; text-align: justify;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ipsam blanditiis nisi iste alias. Ducimus autem excepturi quam officiis, neque vel similique quo eum assumenda qui reprehenderit odit voluptas, recusandae. </p>
           </div>
           <div class="col s6">  
             <img id="logoFisica"src="img/logo.png">
@@ -114,7 +118,15 @@
     $(document).ready(function(){
         $('.slider').slider({full_width: true});
         
-      });
-        
+    });
+
+    </script>
+    <script>
+      var options = [
+      {selector: '.mission', offset: 0, callback: 'Materialize.fadeInImage(".mission")' },
+      {selector: '.vision', offset: 0, callback: 'Materialize.fadeInImage(".vision")' },
+      {selector: '.objetives', offset: 0, callback: 'Materialize.fadeInImage(".objetives")' },
+    ];
+    Materialize.scrollFire(options);
     </script>
 {% endblock %}
