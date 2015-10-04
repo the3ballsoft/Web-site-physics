@@ -4,14 +4,16 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+
 {% endblock %}
 
 {% block content %}
   <!-- beginSlider -->
-    <section>
+    <section style="border-bottom: 3px solid rgb(202, 135, 61);border-top: 3px solid rgb(142, 19, 21);">
        <div class="slider">
           <ul class="slides">
+          
               <li>
                 <img src="{% static "img/photo1.jpg"%}"> <!-- random image -->
                 <div class="caption center-align">
@@ -48,62 +50,160 @@
     
     
  <div class="section"> 
-    
-        <div class="mission"> 
-          
-            <div class="row container">
-              <div class="col s6">
-                  <h2 class="header flow-text" style="font-size:40px;">Misión</h2>
-                  <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; text-align: justify; font-size: 20px;" ><!-- {% autoescape off %}{{ data.mision }} {% endautoescape %}  -->
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta ducimus alias fugiat accusantium tenetur aliquid totam deleniti. Laboriosam voluptatem accusamus temporibus eos hic quibusdam labore impedit, aperiam sequi molestias! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur asperiores alias natus mollitia sit repellat, accusantium officiis illum molestiae. Quibusdam enim, vero consequatur nam error quae cumque libero corrupti qui.</p>
-              </div>
-              <div class="col s6"> 
-                  <img src="{% static "images/birrete.png"  %}" width="400px" height="500px"> 
-              </div>
-            </div>
-        
-        </div> 
-      
-    <div class="vision">
-      
-      <div class="row container">
-        <div class="col s6">
-          <div style="background-color: #3e3b66;
-          background-image: -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(0%, #3e3b66), color-stop(100%, #000000));
-          background-image: -webkit-radial-gradient(center, ellipse cover, #FDFEFE 0%, #F0F2F4 100%);
-          background-image: -moz-radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);
-          background-image: -o-radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);
-          background-image: radial-gradient(center, ellipse cover, #3e3b66 0%, #000000 100%);position: relative;height: 500px;width: 100%;">
+    <div class="container">
+         <div class="row">
+        <div class="col s3">
+          <div class="icon-block" style="text-align: center;">
+            <h2 class=" brown-text"><img src="{% static "images/presentacion.png"%}" alt=""></h2>
+            <h5 class="">Presentacion</h5>
 
-        <atom><div class="center"></div><div class="atomo1"><div></div></div><div class="atomo2"><div></div></div><div class="atomo3"><div></div></div></atom></div>
-          
+            <p class="light " style="text-align: justify;">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
         </div>
-        <div class="col s6 ">
-          <h2 class="header flow-text" style="font-size:40px;">Visión</h2>
-            <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; text-align: justify; font-size: 20px !important;"><!-- {% autoescape off %}{{ data.vision }} {% endautoescape %} -->
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ipsum commodi, dicta error. Minus, accusantium explicabo est quibusdam repellendus, deleniti totam nisi nam, inventore dolor ex sunt sequi quidem dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus temporibus odit beatae corporis praesentium obcaecati animi optio incidunt distinctio ipsum repudiandae aut, repellendus cum maxime, quae impedit. Tempora, voluptas, rerum!</p>
+
+        <div class="col s3">
+          <div class="icon-block" style="text-align: center;">
+            <h2 class=" brown-text"><img src="{% static "images/mision.png"%}" alt=""></h2>
+            <h5 class="">Mision</h5>
+
+            <p class="light " style="text-align: justify;">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="icon-block" style="text-align: center;">
+            <h2 class=" brown-text"><img src="{% static "images/vision.png"%}" alt=""></h2>
+            <h5 class="">Vision</h5>
+
+            <p class="light " style="text-align: justify;">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+         <div class="col s3">
+          <div class="icon-block" style="text-align: center;">
+            <h2 class=" brown-text"><img src="{% static "images/objetivos.png"%}" alt=""></h2>
+            <h5 class="">Objectivos</h5>
+
+            <p class="light " style="text-align: justify;">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
         </div>
       </div>
     </div>
-      <div class="objetives">
-        <div class="row container">
-          <div class="col s6">  
-              <h2 class="header flow-text" style="font-size:40px;">Objetivo</h2>
-              <p class="grey-text text-darken-3 lighten-3 flow-text" style="color: #999 !important; font-size: 20px !important; text-align: justify;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae voluptatibus aliquid nemo soluta nisi doloremque placeat earum, accusantium repudiandae maxime temporibus eligendi porro a quisquam eum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ipsam blanditiis nisi iste alias. Ducimus autem excepturi quam officiis, neque vel similique quo eum assumenda qui reprehenderit odit voluptas, recusandae. </p>
-          </div>
-          <div class="col s6">  
-            <img id="logoFisica"src="img/logo.png">
-          </div>
-        </div>
-    
-      </div>
+       
   </div>
+  <hr>
+  <div class="section">
+  <div class="container">
+    <div class="row">
+      <h5 style="  background-color: rgb(0, 67, 122);
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;">Ultimas noticias</h5>
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+      <div class="row">
+      
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+      <div class="col s4 ">
+      <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static "images/unimag.jpg" %}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Ver mas</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Titulo de la noticia<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  <hr>
   <div class="parallax-container" style="  top: 21px;">
     <div class="parallax"><img src="{% static "images/unimag.jpg" %}"></div>
-     <div class="caption center-align">
+    <!--  <div class="caption center-align">
                   <h3>This is our big Tagline!</h3>
                   <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                </div> -->
   </div>
       	
  
