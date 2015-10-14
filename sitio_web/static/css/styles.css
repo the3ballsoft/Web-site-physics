@@ -49,3 +49,7 @@
       border: 1px solid rgba(206, 138, 62, 0.42);
     width: 800px;
   }
+
+  .nav_bold{
+    font-weight: bold;
+  }
