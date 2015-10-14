@@ -59,16 +59,27 @@
                -->
                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down animated  bounceInUp">
-                  <li class="back" ><a href="index.html">| Inicio |</a></li>
-                  <li class="back"><a data-target="modal1" class="modal-trigger">| Noticias |</a></li>
-                  <li class="back"><a href="contacto.html">| Programas |</a></li>
-                  <li class="back"><a href="contacto.html">| Planta Docente |</a></li>
-                  <li class="back"><a href="contacto.html">| Eventos |</a></li>
-                  <li class="back"><a href="contacto.html">| Laboratorios |</a></li>
-                  <li class="back"><a href="contacto.html">| Documentos |</a></li>
-                  <li class="back"><a href="contacto.html">| Contactenos |</a></li>
-                  <li class="back"><a href="contacto.html">| Blog |</a></li>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a data-target="modal1" class="modal-trigger">Noticias</a></li>
+                  <li><a href="contacto.html"> Programas</a></li>
+                  <li><a href="contacto.html"> Planta Docente</a></li>
+                  <li><a href="contacto.html"> Eventos </a></li>
+                  <li><a href="contacto.html"> Laboratorios</a></li>
+                  <li><a href="contacto.html">Documentos</a></li>
+                  <li><a href="contacto.html">Contactenos</a></li>
+                  <li><a href="contacto.html"> Blog </a></li>
                   
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a data-target="modal1" class="modal-trigger">Noticias</a></li>
+                  <li><a href="contacto.html"> Programas</a></li>
+                  <li><a href="contacto.html"> Planta Docente</a></li>
+                  <li><a href="contacto.html"> Eventos </a></li>
+                  <li><a href="contacto.html"> Laboratorios</a></li>
+                  <li><a href="contacto.html">Documentos</a></li>
+                  <li><a href="contacto.html">Contactenos</a></li>
+                  <li><a href="contacto.html"> Blog </a></li>
                 </ul>
                 
               </div>
@@ -163,12 +174,21 @@
 
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
+    <script>
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();  
+        })
+    
+    </script>
+    
+    
    
 
 
     <!--/****** extrajs *********/-->
     {% block extrajs  %}
     <script>
+
     $(document).ready(function(){
         $('.parallax').parallax();
     });
