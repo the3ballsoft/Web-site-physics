@@ -37,7 +37,17 @@ class PresentacionAdmin(SummernoteModelAdmin):
 	reobjectivos.short_description = 'Objetivos'
 
 class NoticiasAdmin(SummernoteModelAdmin):
-	list_display = ('titulo','created','modified',)
+	list_display = ('titulo','created','modified','imagens',)
+
+	def imagens(self, obj):
+		if obj.imagen:
+			return '<img src="%s" width="400px" height="200px">' % (obj.imagen.url)
+		else:
+			return '<img src="%s" width="400px" height="200px">' % ('http://placehold.it/400x200')
+	imagens.allow_tags = True
+	imagens.admin_order_field = 'imagen'
+	imagens.short_description = 'Imagen'
+
 
 class ProyectosAdmin(SummernoteModelAdmin):
 	list_display = ('titulo','created','modified',)

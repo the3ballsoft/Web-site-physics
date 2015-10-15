@@ -26,6 +26,7 @@ class Presentacion(models.Model):
 class Noticias(TimeStampedModel):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	informacion = models.TextField()
+	imagen = models.ImageField(upload_to="noticias/",verbose_name="Noticias")
  
 	def __unicode__(self):
 		return self.titulo
