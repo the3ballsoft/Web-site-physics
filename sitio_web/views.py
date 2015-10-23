@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View
+
 from .models import Presentacion, Noticias
+
+from .models import Docentes
+
 from .helpers import get_object_or_None
 
 class HomeView(TemplateView):
@@ -11,12 +15,28 @@ class HomeView(TemplateView):
 		context['data'] = Presentacion.objects.get(pk=1)
 		context['noticias'] = Noticias.objects.all()[:6]
 		print context
-		
 		return context
+
+
+
+class TeachingView(TemplateView):
+	template_name = 'plantaDocente.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(TeachingView, self).get_context_data(**kwargs)
+		context['docentes'] = Docentes.objects.all()
+		return context
+
 
 
 class NoticiasView(TemplateView):
 	template_name = 'noticias.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(NoticiasView, self).get_context_data(**kwargs)
+		context['noticias'] = Noticias.objects.all()
+		print context
+		return context 
 
 class CursosView(TemplateView):
 	template_name = 'cursos.html'
@@ -38,3 +58,4 @@ class GaleriaView(TemplateView):
 
 class BlogView(TemplateView):
 	template_name = 'blog.html'
+

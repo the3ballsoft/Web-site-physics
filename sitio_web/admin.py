@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Presentacion ,Noticias ,Proyectos ,Galeria ,laboratorios, Docentes, Social, Ubicacion
+from .models import Presentacion ,Noticias ,Proyectos ,Galeria ,laboratorios, Docentes, Social, Ubicacion,Cursos
 from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
 
@@ -95,8 +95,12 @@ class SocialAdmin(SummernoteModelAdmin):
 class UbicacionAdmin(SummernoteModelAdmin):
 	list_display = ('ciudad','localizacion',)
 
+class CursosAdmin(SummernoteModelAdmin):
+	list_display = ('nombre', 'descripcion',)
+
 admin.site.unregister(Attachment)
 admin.site.register(Ubicacion, UbicacionAdmin)
+admin.site.register(Cursos, CursosAdmin)
 admin.site.register(Social, SocialAdmin)
 admin.site.register(Galeria, GaleriaAdmin)
 admin.site.register(Presentacion, PresentacionAdmin)

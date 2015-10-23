@@ -10,22 +10,26 @@
 
 {% block content %}
 <div class="row">
-          <div class="col s12 m8">
+		{% for noticia in noticias %}
+          <div class="col s12 ">
             <h4 class="light"></h4>
             <div class="card large">
               <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Título de la Tarjeta</span>
+                <img src="{{ noticia.imagen.url }}">
+                <span class="card-title" style="  background-color: rgba(5, 5, 5, 0.54);font-weight: bold;color: white;">{{noticia.titulo}}</span>
               </div>
               <div class="card-content">
-                <p>Soy una tarjeta muy simple. Soy buena mostrando pequeños trozos de información. Soy conveniente porque requiero pocas etiquetas para usarme efectivamente.</p>
+                <p>{% autoescape off %}{{noticia.informacion}}{% endautoescape %}</p>
+              </div>
+              <div class="card-action">
+                <a >Fecha de publicacion : {{noticia.created}}</a>
+                
               </div>
             </div>
           </div>
-          <div class="col s12 m4">
-            <br><br>
-            <p class="caption"> <h5>Ultimas Noticias</h5></p>
-          </div>
+           <hr>
+          {% endfor %}
+        
         </div>
       
 {% endblock %}
