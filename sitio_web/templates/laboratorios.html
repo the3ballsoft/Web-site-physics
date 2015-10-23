@@ -4,15 +4,95 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
+<style>
+	.collection{
+		box-shadow: 2px 3px 2px #ccc;
+	}
+	#container{
+        background-color: #E5E5E8;
+    }
 
+</style>
 
 {% endblock %}
-
+	
 {% block content %}
-laboratorios
+
+	
+	
+
+<div id="container">
+	<div class="container">
+	<div class="row">
+		<div class="col m3">
+    		<div class="col hide-on-small-only ">
+			      <ul class="section table-of-contents">
+			        <li><a href="#mechanics">Física Mecánica</a></li>
+			        <li><a href="#hot">Calor & Ondas</a></li>
+			        <li><a href="#optical">Óptica</a></li>
+			        <li><a href="#electricity">Electricidad y magnetismo</a></li>
+			      </ul>
+			</div>
+    	</div>
+    	<div class="col s12 m9">
+		      <div id="mechanics" class="section scrollspy">
+		        <ul class="collection with-header">
+			        <li class="collection-header"><h4>Fisica Mecánica</h4></li>
+			        <li class="collection-item"><a href="#">laboratorio#1</a></li>
+			        <li class="collection-item">Alvin</li>
+			        <li class="collection-item">Alvin</li>
+			        <li class="collection-item">Alvin</li>
+			   	</ul>
+
+		      </div>
+
+		      <div id="hot" class="section scrollspy">
+		         <ul class="collection with-header">
+			        <li class="collection-header"><h4>Calor & Ondas</h4></li>
+			        <li class="collection-item">Alvin</li>
+			        <li class="collection-item">Alvin</li>
+			        <li class="collection-item">Alvin</li>
+			        <li class="collection-item">Alvin</li>
+			      </ul>
+
+		      </div>
+
+		      <div id="optical" class="section scrollspy">
+		         <ul class="collection with-header">
+				    <li class="collection-header"><h4>Óptica</h4></li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				  </ul>
+
+		      </div>
+		      <div id="electricity" class="section scrollspy">
+		         <ul class="collection with-header">
+				    <li class="collection-header"><h4>Electricidad y magnetismo</h4></li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				    <li class="collection-item">Alvin</li>
+				  </ul>
+
+		      </div>
+	    </div>
+	</div>
+    	
+    
+    
+
+</div>
+</div>
       
 {% endblock %}
 
 {% block extrajs %}
-
+<script>
+	  $(document).ready(function(){
+    		$('.scrollspy').scrollSpy();
+  		});
+     
+</script>
 {% endblock %}
