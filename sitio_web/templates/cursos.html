@@ -14,17 +14,17 @@
 
 
 
-<section class="firtsSection" style="background-color:#F8F9FA;">
+<section class="firtsSection" style="border-top: 2px solid rgb(203, 136, 61);">
 	<div class="container">
 		<div class="row">
-			<div class="col s8">
+      <div class="col s8">
 				<h2 style="font-family: sans-serif; color:#0E5690;font-size:47px;">Fisica Mecanica</h2>
 				<p class="flow-text" style="text-align:justify;font-size:21px;">
 					En este curso se  desarrolla la mecánica, (cinemática, dinámica y conservación de la energía mecánica), de traslación y de rotación de cuerpos rígidos. Se hace énfasis en la aplicación de estos conceptos en la solución de problemas prácticos y de situaciones de la cotidianidad y en la formación de habilidades relacionadas con el trabajo experimental. Se espera que los alumnos construyan significados de estos los conceptos y desarrollen habilidades procedimentales con el trabajo práctico que les permita su desempeño en los cursos posteriores.
 				</p>
 			</div>
 			<div class="col s4">
-				AQUI VA LA IMAGEN
+				<img src="{% static "img/meca.gif"%}"  style="  WIDTH: 495PX;HEIGHT: 300PX;top: 100px;position: relative;"alt="">
 			</div>
 			
 		</div>
@@ -35,7 +35,9 @@
 	<div class="container" >
 		<div class="row">
 			<div class="col s4" style="border-stylus: solid">
-				AQUI VA LA IMAGEN
+				<img src="{% static "img/calor.gif"%}" style="position: relative;
+  left: -105px;
+  top: 100px;" alt="">
 			</div>
 			<div class="col s8">
 				<h2 style="font-family: sans-serif; color:#0E5690; font-size:47px;">Calor & Ondas</h2>
@@ -49,7 +51,7 @@
 
 
 </section>
-<section class="thirdSection" style="background-color:#F0F2F4;">
+<section class="thirdSection" style="">
 	<div class="container">
 		<div class="row">
 			<div class="col s8">
@@ -57,47 +59,16 @@
 				<p class="flow-text" style="text-align:justify; font-size:21px;">Este es un curso teórico-práctico de nivel básico y se desarrolla en dos partes.  La primera parte comprende el estudio del campo electrostático, el potencial eléctrico, la corriente eléctrica y los circuitos C. D. La segunda parte comprende el estudio del campo magnético, sus fuentes, la inducción electromagnética y la inductancia y el circuito R-L y la energía magnética. Cada unidad incluye experiencias de laboratorio realizada por los estudiantes  y experiencias de carácter demostrativo realizada por el profesor.</p>
 			</div>
 			<div class="col s4">
-				AQUI VA LA IMAGEN
+				<img src="{% static "img/ele.jpg"%}" style="  position: relative;
+  left: 50px;
+  top: 60px;" alt="">
 			</div>
 			
 		</div>
 		<hr>
 	</div>
 </section>
- <!-- <div class="parallax-container">
-    <div class="row container">
-    	<div class="col s6">
-      		<h2 class="header">Fisica Mecanica</h2>
-      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, nam. Ad enim repudiandae sint, excepturi, aspernatur dolorum ea cupiditate aliquam, facilis quibusdam voluptates eaque at maiores officia saepe, sunt nam!</p>
-    	</div>
-    	<div class="col s6">
-    		AQUÍ VA LA IMAGEN
-    	</div>
-      
-    </div>
-  </div>
-  <div class="section white">
-    <div class="row container" style="background-color:#F0F2F4;">
-      <div class="col s6">
-      		<h2 class="header">Calor & Ondas</h2>
-      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea praesentium modi, rerum quia aspernatur possimus obcaecati nostrum, voluptatum fugit atque quam ipsam eveniet et mollitia impedit consequuntur autem labore. Ut.</p>
-      </div>
-      <div class="col s6">
-      	AQUÍ VA LA IMAGEN
-      </div>
-    </div>
-  </div>
-  <div class="parallax-container" style="background-color:#F0F2F4;">
-    <div class="row container">
-     <div class="col s6">
-      	<h2 class="header">Electricidad Y Magnetismo</h2>
-      	<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-     </div>
-     <div class="col s6">
-     	AQUÍ VA LA IMAGEN
-     </div>
-    </div>
-  </div> -->
+
 
       
 {% endblock %}
