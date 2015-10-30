@@ -9,8 +9,12 @@
     <link type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/animate.css" %}"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    
 
+    <style>
+      #container{
+        background-color: #E5E5E8;
+      }
+    </style>
 <!-- Latest compiled and minified JavaScript -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     {% block extracss  %}
@@ -34,7 +38,7 @@
     -->
   </head>
 
-  <body>
+  <body style=>
     <!--/****** Header  *********/-->
     {% block header %}
     <header>
@@ -47,6 +51,7 @@
               <div class="nav-wrapper" style="   line-height: 76px !important;">
                
  
+
               <a href="#!" class="brand-logo animated  bounceInDown timer" style="   line-height: 83px; left: 40px;
                    position: relative;"><img src="{% static "images/logo.png" %}" width="110px" height="70px" >
                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -76,6 +81,7 @@
                   <li><a class="nav_bold" href="/blog/"> Blog </a></li>
                   
                 </ul>
+
                 
               </div>
             </nav>
@@ -94,6 +100,7 @@
                 </a>
               </div>
 
+
       <div id="modal1" class="modal">
         <div class="modal-content">
           <h4>Modal Header</h4>
@@ -104,18 +111,23 @@
         </div>
       </div>
 
-    </header>
 
+    </header>
 
     {% endblock %}
     <!--/****** end Header *********/-->
-
-    <!--/****** Main Content *********/-->
-    {% block content %}
-    <!-- MODAL -->
+    
+      <!--/****** Main Content *********/-->
+    
+      {% block content %}
   
-    {% endblock %}
-    <!--/****** end Content *********/-->
+  
+      {% endblock %}  
+    
+    
+    <!--/****** end Content *********/-->  
+    
+    
   
     <!--/****** Footer *********/-->
     {% block footer %}
@@ -136,13 +148,13 @@
                <div class="col l4" align="left">
                 <h5 class="white-text">Mapa del sitio</h5>
                 <div align="left">
-              <ul class="list-icon">
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Quienes somos ?</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Noticias </a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Foro</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Galeria</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Contacto</a></li>
-                </ul>
+                  <ul class="list-icon">
+                      <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Quienes somos ?</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Noticias </a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Foro</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Galeria</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">insert_link</i> Contacto</a></li>
+                    </ul>
                 </div>
               </div>
 
@@ -162,6 +174,7 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
+
            <div class="ftr-text" style="text-align: center; font-size: 11px;">
           <strong><strong>Universidad del Magdalena</strong> | PBX: (57 - 5) 4217940| Dirección: Carrera 32 No 22 - 08 | Santa Marta D.T.C.H. - Colombia - Suramérica 
 
@@ -178,6 +191,10 @@
         $(document).ready(function(){
           $(".button-collapse").sideNav();  
         })
+        $(document).ready(function(){
+          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+          $('.modal-trigger').leanModal();
+        });
     
     </script>
     
@@ -189,13 +206,18 @@
     {% block extrajs  %}
     <script>
 
+
       $(document).ready(function(){
           $('.parallax').parallax();
       });
       $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal();
-      });
+
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+    
       $(document).ready(function(){
           $('.slider').slider({full_width: true});
           $('.slider').slider({indicators:false});

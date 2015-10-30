@@ -4,15 +4,100 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
-
+<style>
+	.modal.bottom-sheet {
+		max-height: 80%;
+	}
+</style>
 
 {% endblock %}
 
 {% block content %}
- materiales
+<div class="container">
+	
+	 <div class="row">
+	 	<div class="col s12">
+	      <ul class="tabs">
+	        <li class="tab col s4"><a href="#test1">Física mecanica</a></li>
+	        <li class="tab col s4"><a class="active" href="#test2">Calor & Ondas</a></li>
+	        <li class="tab col s4"><a href="#test4">Electricidad & magnetismo</a></li>
+	      </ul>
+	     </div>
+	     <h4 class="left-align flow-text" >Docentes</h4>
+	        <div class="col s12">
+	        	 <div class="collection">
+			        <a  class="collection-item center-align modal-trigger" href="#modal1">Profe Juancho</a>
+			        <a href="#!" class="collection-item center-align active">Profe Juancho</a>
+			        <a href="#!" class="collection-item center-align">Profe Juancho</a>
+			        <a href="#!" class="collection-item center-align">Profe Juancho</a>
+			      </div>
+			            
+	        </div>
+	        
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Profe Juancho</h4>
+      	
+	 		<ul class="collapsible popout" data-collapsible="accordion">
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">library_books</i>Examenes</div>
+			      <div class="collapsible-body">
+			      	<div class="row">
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      	</div>
+			      </div>
+			    </li>
+			    <li>
+			      <div class="collapsible-header"><i class="material-icons">query_builder</i>Quizes</div>
+			      <div class="collapsible-body"><div class="row">
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      		<div class="col s3"><a href="#">lorempsddd</a></div>
+			      	</div></div>
+			    </li>
+			  
+			    <li>
+			    	<div class="collapsible-header"><i class="material-icons">note_add</i>Material extra</div>
+			      <div class="collapsible-body">
+				      <div class="row">
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      		<div class="col s3"><a href="#">lorempsddd</a></div>
+				      </div>
+			      </div>
+			    </li>
+			</ul>
+	 	
+	 	
+    </div>
+   
+  </div>
+            
+	
+	 </div>
+</div>
       
 {% endblock %}
 
 {% block extrajs %}
-
+<script>
+	$(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false// A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+</script>
 {% endblock %}
