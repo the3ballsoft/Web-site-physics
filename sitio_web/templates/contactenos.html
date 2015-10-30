@@ -4,12 +4,73 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
+<style>
+.contenedor {
+	 border-radius: 25px;
+	 border: 2px solid #9E9E9E;
 
+}
+.formulario {
+	margin: auto;
+	width: 70%; /* probá una medida en px si querés */
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+</style>
 
 {% endblock %}
 
 {% block content %}
- cursos
+<div class="container">
+	<div class="row">
+		<div class="col s6">
+			<h2 class="flow-text">Formulario de contacto</h2>
+			 <div class="contenedor">
+			 	<div class="formulario">
+			 		
+		   		 	
+		   		 	<form>	
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input  id="Nombre" type="text" class="validate">
+				          <label for="Nombre">Nombre *</label>
+				        </div>
+				       
+				      </div>
+				      <div class="row">
+				      	 <div class="input-field col s12">
+				          <input id="email" type="email" class="validate">
+				          <label for="email">Email *</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input  id="asunto" type="text" class="validate">
+				          <label for="asunto">Asunto *</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				         <div class="input-field col s12">
+				          <textarea id="textarea1" class="materialize-textarea"></textarea>
+				          <label for="textarea1">Mensaje *</label>
+				        </div>
+				      </div>
+				     
+				       <button  class="btn waves-effect waves-light center-align" type="submit" name="action">Enviar email
+					    <i class="material-icons right">send</i>
+					  </button>
+				    </form>
+		   		 
+			 	</div>
+			 </div>	
+		</div>		
+		<div class="col s6">
+			<h3>Aquí va el mapa</h3>
+		</div>
+	</div>
+</div>
+
+		  
       
 {% endblock %}
 
