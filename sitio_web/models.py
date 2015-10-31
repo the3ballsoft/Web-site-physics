@@ -30,14 +30,6 @@ class Noticias(TimeStampedModel):
  
 	def __unicode__(self):
 		return self.titulo
-
-class Proyectos(TimeStampedModel):
-	titulo = models.CharField(max_length=255, blank=True, null=True)
-	informacion = models.TextField()
-
-	def __unicode__(self):
-		return self.titulo
-
 	
 
 class Imagen(TimeStampedModel):
@@ -79,9 +71,3 @@ class Ubicacion(models.Model):
 	def __unicode__(self):
 		return self.ciudad
 
-class Cursos(models.Model):
-	nombre = models.CharField(max_length=255)
-	descripcion = models.TextField()
-
-	def __unicode__(self):
-		return self.nombre
