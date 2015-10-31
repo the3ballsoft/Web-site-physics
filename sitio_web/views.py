@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, TemplateView, View
 
 from .models import Presentacion, Noticias
 
-from .models import Docentes
+from .models import Docentes, Galeria
 
 from .helpers import get_object_or_None
 
@@ -55,6 +55,14 @@ class ContactenosView(TemplateView):
 
 class GaleriaView(TemplateView):
 	template_name = 'galeria.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(GaleriaView, self).get_context_data(**kwargs)
+		context['galerias'] = Galeria.objects.all()
+		print context
+		return context 
+
+
 
 class BlogView(TemplateView):
 	template_name = 'blog.html'
