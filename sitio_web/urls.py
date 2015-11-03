@@ -8,7 +8,7 @@ urlpatterns = patterns('',
 
     url(r'^noticias/$', views.NoticiasView.as_view(), name="noticias"), #search
     url(r'^cursos/$', views.CursosView.as_view(), name="cursos"), #search
-    url(r'^eventos/$', views.EventosView.as_view(), name="eventos"), #search
+    url(r'^eventos/$', views.EventoView.as_view(), name="evento"), #search
     url(r'^laboratorios/$', views.LaboratoriosView.as_view(), name="laboratorios"), #search
     url(r'^materiales/$', views.MaterialesView.as_view(), name="materiales"), #search
     url(r'^contactenos/$', views.ContactenosView.as_view(), name="contactenos"), #search
