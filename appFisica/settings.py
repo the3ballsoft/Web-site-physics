@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_summernote',
     'location_field',
     'sitio_web',
+    'fullcalendar',
  
 )
 
@@ -56,6 +57,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'appFisica.urls'
+
 
 TEMPLATES = [
     {

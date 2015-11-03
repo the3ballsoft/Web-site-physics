@@ -52,6 +52,8 @@ class laboratorios(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
+
+
 class Docentes(models.Model):
 	imagen = models.ImageField(upload_to="docentes/",verbose_name="Galeria",blank=True, null=True)
 	nombre = models.CharField(max_length=255, blank=True, null=True)
