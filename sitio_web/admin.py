@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Presentacion ,Noticias ,Proyectos ,Galeria ,laboratorios, Docentes, Social, Ubicacion
+from .models import Presentacion ,Noticias ,Proyectos ,Galeria , Docentes, Social, Ubicacion,Cursos, Imagen
 from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
 
@@ -37,27 +37,29 @@ class PresentacionAdmin(SummernoteModelAdmin):
 	reobjectivos.short_description = 'Objetivos'
 
 class NoticiasAdmin(SummernoteModelAdmin):
-	list_display = ('titulo','created','modified',)
+	list_display = ('titulo','created','modified','imagens',)
+
+	def imagens(self, obj):
+		if obj.imagen:
+			return '<img src="%s" width="400px" height="200px">' % (obj.imagen.url)
+		else:
+			return '<img src="%s" width="400px" height="200px">' % ('http://placehold.it/400x200')
+	imagens.allow_tags = True
+	imagens.admin_order_field = 'imagen'
+	imagens.short_description = 'Imagen'
+
 
 class ProyectosAdmin(SummernoteModelAdmin):
 	list_display = ('titulo','created','modified',)
 
 class GaleriaAdmin(SummernoteModelAdmin):
+	model = Imagen
+	filter_horizontal = ('imagenes',)
+	list_display = ('titulo','created','modified',)
 
-	list_display = ('titulo','created','modified','reimagen',)
 
-	def reimagen(self, obj):
 
-	    if obj.imagen:
-	        return '<img src="%s" width="400px" height="200px">' % (obj.imagen.url)
-	    else:
-	        return '<img src="%s" width="400px" height="200px">' % ('http://placehold.it/60x60')
-	reimagen.allow_tags = True
-	reimagen.admin_order_field = 'imagen'
-	reimagen.short_description = 'Imagen'
 
-class laboratoriosAdmin(SummernoteModelAdmin):
-	pass
 
 class DocentesAdmin(SummernoteModelAdmin):
 	list_display = ('nombre','correo','telefono','retornaimagen',)
@@ -85,12 +87,16 @@ class SocialAdmin(SummernoteModelAdmin):
 class UbicacionAdmin(SummernoteModelAdmin):
 	list_display = ('ciudad','localizacion',)
 
+class CursosAdmin(SummernoteModelAdmin):
+	list_display = ('nombre', 'descripcion',)
+
 admin.site.unregister(Attachment)
 admin.site.register(Ubicacion, UbicacionAdmin)
+admin.site.register(Cursos, CursosAdmin)
 admin.site.register(Social, SocialAdmin)
 admin.site.register(Galeria, GaleriaAdmin)
 admin.site.register(Presentacion, PresentacionAdmin)
 admin.site.register(Noticias, NoticiasAdmin)
 admin.site.register(Proyectos, ProyectosAdmin)
-admin.site.register(laboratorios, laboratoriosAdmin)
 admin.site.register(Docentes, DocentesAdmin)
+admin.site.register(Imagen)

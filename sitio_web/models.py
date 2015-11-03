@@ -26,6 +26,7 @@ class Presentacion(models.Model):
 class Noticias(TimeStampedModel):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	informacion = models.TextField()
+	imagen = models.ImageField(upload_to="noticias/",verbose_name="Noticias" , blank=True, null=True)
  
 	def __unicode__(self):
 		return self.titulo
@@ -37,20 +38,22 @@ class Proyectos(TimeStampedModel):
 	def __unicode__(self):
 		return self.titulo
 
+	
+
+class Imagen(TimeStampedModel):
+	imagen = models.ImageField(upload_to="galeria/",verbose_name="Galeria")
+
+	def __unicode__(self):
+		return self.imagen.name
+
 class Galeria(TimeStampedModel):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
-	imagen = models.ImageField(upload_to="galeria/",verbose_name="Galeria")
+	imagenes =  models.ManyToManyField(Imagen)
 
 	def __unicode__(self):
 		return self.titulo
 
 
-class laboratorios(models.Model):
-	nombre = models.CharField(max_length=255, blank=True, null=True)
-	informacion = models.TextField()
-
-	def __unicode__(self):
-		return self.nombre
 
 
 
@@ -77,3 +80,10 @@ class Ubicacion(models.Model):
 
 	def __unicode__(self):
 		return self.ciudad
+
+class Cursos(models.Model):
+	nombre = models.CharField(max_length=255)
+	descripcion = models.TextField()
+
+	def __unicode__(self):
+		return self.nombre

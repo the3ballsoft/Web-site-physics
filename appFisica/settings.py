@@ -41,8 +41,11 @@ INSTALLED_APPS = (
     'django_summernote',
     'location_field',
     'sitio_web',
-    'fullcalendar',
- 
+    'fullcalendar', 
+    'profiles',
+    'curso',
+    'materiales',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +57,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'profiles.backends.EmailOrUsernameModelBackend',
+    'django.contrib.auth.backends.ModelBackend'
 )
 
 ROOT_URLCONF = 'appFisica.urls'
@@ -102,6 +110,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+AUTH_USER_MODEL = 'profiles.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
