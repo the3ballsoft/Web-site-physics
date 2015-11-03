@@ -46,7 +46,16 @@ class Galeria(TimeStampedModel):
 		return self.titulo
 
 
+class Evento(models.Model):
+	titulo = models.CharField(max_length=255, blank=True, null=True)
+	descripcion = models.TextField()
+	imagen = models.ImageField(upload_to="eventos/", verbose_name="Evento")
+	fecha = models.DateTimeField()
+	hora =  models.TimeField()
 
+	def __unicode__(self):
+		return self.titulo
+	
 
 
 class Docentes(models.Model):

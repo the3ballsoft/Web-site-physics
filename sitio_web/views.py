@@ -44,6 +44,11 @@ class CursosView(TemplateView):
 class EventosView(TemplateView):
 	template_name = 'eventos.html'
 
+	def get_context_data(self, **kwargs):
+		context = super(NoticiasView, self).get_context_data(**kwargs)
+		context['eventos'] = Eventos.objects.all()
+		return context 
+
 class LaboratoriosView(TemplateView):
 	template_name = 'laboratorios.html'
 

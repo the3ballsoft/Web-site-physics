@@ -6,10 +6,111 @@
 {% block extracss %}
 	<link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
 	<!-- Grid CSS File (only needed for demo page) -->
+	<style>
+	h1{
+		font-family: sans-serif;color: #F4F7F9;font-size: 47px;
+      	text-align: center;
+      	background-color: rgb(0, 67, 122);
+      	padding: 10px;
+	}
+	#wrapper {
+	width: 90%;
+	max-width: 1100px;
+	min-width: 800px;
+	margin: 50px auto;
+	}
+	.image{
+		position: relative;
 
-	<link rel="stylesheet" type="text/css" href="{% static "css/calendar.css"%}" />
-	<link rel="stylesheet" type="text/css" href="{% static "css/custom_1.css"%}" />
-	<link rel="stylesheet" href="{% static "css/demo.css"%}">
+	}
+
+	.title{
+		position: absolute;
+		color: #fff;	
+		bottom: 80px; 
+		left: 5px; 
+		width: 100%; 
+	}
+	.date{
+		position: absolute;
+		color: #fff;
+		bottom: 60px;
+		left: 5px;
+	}
+	.hours{
+		position: absolute;
+		color: #fff;
+		bottom: 40px;
+		left: 5px;
+	}
+	#columns {
+		-webkit-column-count: 4;
+		-webkit-column-gap: 10px;
+		-webkit-column-fill: auto;
+		-moz-column-count: 4;
+		-moz-column-gap: 10px;
+		-moz-column-fill: auto;
+		column-count: 4;
+		column-gap: 15px;
+		column-fill: auto;
+	}
+
+	.pin {
+		
+		display: inline-block;
+		background: #FEFEFE;
+		border: 2px solid #FAFAFA;
+		box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+		margin: 0 2px 15px;
+		-webkit-column-break-inside: avoid;
+		-moz-column-break-inside: avoid;
+		column-break-inside: avoid;
+		padding: 15px;
+		padding-bottom: 5px;
+		background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+		opacity: 1;
+		
+		-webkit-transition: all .2s ease;
+		-moz-transition: all .2s ease;
+		-o-transition: all .2s ease;
+		transition: all .2s ease;
+	}
+
+	.pin img {
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 15px;
+		margin-bottom: 5px;
+	}
+
+	.pin p {
+		font: 12px/18px Arial, sans-serif;
+		color: #333;
+		margin: 0;
+	}
+
+	@media (min-width: 960px) {
+		#columns {
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+		}
+	}
+
+	@media (min-width: 1100px) {
+		#columns {
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
+	}
+
+/*#columns:hover .pin:not(:hover) {
+	opacity: 0.4;
+}*/
+</style>
+
+
 	
 	
 
@@ -19,127 +120,50 @@
 
 {% block content %}
  
- 	<!-- <section style="background-color: #ccc;height:100%;">
- 		<div class="container">
-	 		<div class="row">
+ <!-- 	<div class="container">
+
+ 		<div class="row">
+ 			
+ 			<div class="col s6">
+	 			<div class="col s4"><img src="{% static "img/evento.jpg" %}" width="30px"; height="40px;"></div>
+
 	 			<div class="col s8">
-	 				<h1>
-				 			<span id="custom-month"></span>
-							<span id="custom-year" ></span>
-			 		</h1>
+	 				<span> 22/34/2015</span>
+	 				<h4>Evento#1</h4>
+	 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quae labore a, quaerat dignissimos itaque blanditiis obcaecati qui aut corporis, praesentium mollitia rem libero aperiam nemo ipsam. Assumenda, praesentium quo?</p>
 	 			</div>
-	 			<div class="col s4">
-	 				<nav>
-							<span id="custom-prev" class="custom-prev">dfd</span>
-							<span id="custom-next" class="custom-next">dsf</span>
-							<span id="custom-current" class="custom-current" title="Got to current date"></span>
-						</nav>
-	 			</div>
-	 		</div>	
+ 			</div>
+ 			<div class="col s6">
+	 			<div class="col s4">IMAGE</div>
+	 			<div class="col s8">Lorem</div>
+ 			</div>
+ 			
+
  		</div>
- 		
-					
-	 	<div class="container" style="margin-top: 0px !important;">
-	 		<div class="row">
-	 				
-		 			
-
-					<div id="calendar"></div>
-	 			
-	 			
-	 			
-	 			
-					
-					
+ 	</div> -->
+<h1>Eventos</h1> 
+<div id="wrapper">
+	<div id="columns">
+		{% for evento in eventos %}
+		<div class="pin">
+			<div class="image">
+				<img src="{{ evento.imagen.url }}" />
+				<h2 class="title flow-text">{{ evento.titulo}}</h2>
+				<span class="date">Fecha: {{ evento.fecha }}</span>
+				<span class="hours">Hora: {{ evento.hora }}</span>
 			</div>
-					
-		</div>			
-	 	
- 	</section> -->
- 	
- 	<div class="container">	
-			<!-- Codrops top bar -->
-			<!-- <div class="codrops-top clearfix">
-				<a href="http://tympanus.net/Development/Stapel/"><strong>&laquo; Previous Demo: </strong>Adaptive Thumbnail Pile Effect</a>
-				<span class="right">
-					<a href="http://tympanus.net/codrops/?p=12416"><strong>Back to the Codrops Article</strong></a>
-				</span>
-			</div><!--/ Codrops top bar --> 
-			<h2 id="custom-month" > </h2>
-			<h2 id="custom-year"></h2>
-			<span id="custom-prev" class="custom-prev">HOL</span>
-			<span id="custom-next" class="custom-next">HOL</span>
-			<div class="custom-calendar-wrap custom-calendar-full">
-				<!-- <div class="custom-header clearfix">
-					<h2>Flexible Calendar <span><span>Demo 1</span> | <a href="index2.html">Demo 2</a></span></h2>
-					<h3 class="custom-month-year">
-						<span id="custom-month" class="custom-month"></span>
-						<span id="custom-year" class="custom-year"></span>
-						<nav>
-							<span id="custom-prev" class="custom-prev"></span>
-							<span id="custom-next" class="custom-next"></span>
-							<span id="custom-current" class="custom-current" title="Got to current date"></span>
-						</nav>
-					</h3>
-				</div> -->
-				<div id="calendar" class="fc-calendar-container"></div>
-			</div>
-		</div><!-- /container -->
- 
-
+			
+				
+			<p>
+				{{ evento.descripcion}}
+			</p>
+		</div>
+		{% endfor %}
+		
+	</div>
+</div>
     
 {% endblock %}
 
 {% block extrajs %}
-<script type="text/javascript" src="{% static "js/jquery.calendario.js"%}"></script>
-<script type="text/javascript" src="{% static "js/data.js"%}"></script>
-<script type="text/javascript">	
-			$(function() {
-			
-				var cal = $( '#calendar' ).calendario( {
-						onDayClick : function( $el, $contentEl, dateProperties ) {
-
-							for( var key in dateProperties ) {
-								console.log( key + ' = ' + dateProperties[ key ] );
-							}
-
-						},
-						caldata : codropsEvents
-					} ),
-					$month = $( '#custom-month' ).html( cal.getMonthName() ),
-					$year = $( '#custom-year' ).html( cal.getYear() );
-
-				$( '#custom-next' ).on( 'click', function() {
-					cal.gotoNextMonth( updateMonthYear );
-				} );
-				$( '#custom-prev' ).on( 'click', function() {
-					cal.gotoPreviousMonth( updateMonthYear );
-				} );
-				$( '#custom-current' ).on( 'click', function() {
-					cal.gotoNow( updateMonthYear );
-				} );
-
-				function updateMonthYear() {				
-					$month.html( cal.getMonthName() );
-					$year.html( cal.getYear() );
-				}
-
-				// you can also add more data later on. As an example:
-				/*
-				someElement.on( 'click', function() {
-					
-					cal.setData( {
-						'03-01-2013' : '<a href="#">testing</a>',
-						'03-10-2013' : '<a href="#">testing</a>',
-						'03-12-2013' : '<a href="#">testing</a>'
-					} );
-					// goes to a specific month/year
-					cal.goto( 3, 2013, updateMonthYear );
-
-				} );
-				*/
-			
-			});
-		</script>
-
 {% endblock %}
