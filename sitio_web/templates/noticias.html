@@ -10,26 +10,32 @@
 
 {% block content %}
 <div class="row">
-		{% for noticia in noticias %}
-          <div class="col s12 ">
-            <h4 class="light"></h4>
-            <div class="card large">
-              <div class="card-image">
-                <img src="{{ noticia.imagen.url }}">
-                <span class="card-title" style="  background-color: rgba(5, 5, 5, 0.54);font-weight: bold;color: white;">{{noticia.titulo}}</span>
+    {% if  noticias %}
+    		{% for noticia in noticias %}
+              <div class="col s12 ">
+                <h4 class="light"></h4>
+                <div class="card large">
+                  <div class="card-image">
+                    <img src="{{ noticia.imagen.url }}">
+                    <span class="card-title" style="  background-color: rgba(5, 5, 5, 0.54);font-weight: bold;color: white;">{{noticia.titulo}}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>{% autoescape off %}{{noticia.informacion}}{% endautoescape %}</p>
+                  </div>
+                  <div class="card-action">
+                    <a >Fecha de publicacion : {{noticia.created}}</a>
+                    
+                  </div>
+                </div>
               </div>
-              <div class="card-content">
-                <p>{% autoescape off %}{{noticia.informacion}}{% endautoescape %}</p>
-              </div>
-              <div class="card-action">
-                <a >Fecha de publicacion : {{noticia.created}}</a>
-                
-              </div>
-            </div>
-          </div>
-           <hr>
-          {% endfor %}
-        
+               <hr>
+              {% endfor %}
+    {% else %}
+      <div style="height: 300px; margin-top: 150px; ">
+        <h1 class="center-align" style="color: #ccc;">No hay noticias</h1>
+      </div>
+    {% endif%}
+
         </div>
       
 {% endblock %}
