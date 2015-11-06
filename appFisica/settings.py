@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django_summernote',
     'location_field',
     'sitio_web',
-    'fullcalendar', 
     'profiles',
     'curso',
     'materiales',
