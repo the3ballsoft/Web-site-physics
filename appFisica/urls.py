@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'', include('sitio_web.urls', namespace="website")),
+    url(r'', include('docentes.urls', namespace="docentes")),
 ]
 
 if settings.DEBUG:

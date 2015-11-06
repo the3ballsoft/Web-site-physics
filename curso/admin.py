@@ -1,5 +1,10 @@
 from django.contrib import admin
 from .models import Curso
+from materiales.models import Material
 
 
-admin.site.register(Curso)
+class AdminCurso(admin.ModelAdmin):
+	pass
+	
+
+admin.site.register(Curso,AdminCurso)

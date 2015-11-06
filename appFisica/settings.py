@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'profiles',
     'curso',
     'materiales',
+    'docentes',
     
 )
 
@@ -65,10 +66,6 @@ AUTHENTICATION_BACKENDS = (
 
 ROOT_URLCONF = 'appFisica.urls'
 
-AUTHENTICATION_BACKENDS = (
-    'profiles.backends.EmailOrUsernameModelBackend',
-    'django.contrib.auth.backends.ModelBackend'
-)
 
 TEMPLATES = [
     {
@@ -126,8 +123,11 @@ else:
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'static'),
+STATICFILES_DIRS = (   
+    
+    os.path.join(BASE_DIR, '../../sitio_web/static'),
+    os.path.join(BASE_DIR, '../../docentes/static'),
+
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
