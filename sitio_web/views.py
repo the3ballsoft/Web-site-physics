@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, TemplateView, View
 
 from .models import Presentacion, Noticias
 
-from .models import Docentes, Galeria
+from .models import Docentes, Galeria, Evento
 
 from .helpers import get_object_or_None
 
@@ -41,8 +41,13 @@ class NoticiasView(TemplateView):
 class CursosView(TemplateView):
 	template_name = 'cursos.html'
 
-class EventosView(TemplateView):
+class EventoView(TemplateView):
 	template_name = 'eventos.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(EventoView, self).get_context_data(**kwargs)
+		context['eventos'] = Evento.objects.all()
+		return context 
 
 class LaboratoriosView(TemplateView):
 	template_name = 'laboratorios.html'

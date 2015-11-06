@@ -5,7 +5,14 @@
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
-
+<style>
+  #galTitle{
+      font-family: sans-serif;color: #F4F7F9;font-size: 47px;
+      text-align: center;
+      background-color: rgb(0, 67, 122);
+      padding: 10px;
+  }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -17,24 +24,24 @@
   color: rgb(0, 61, 116);">
          Publicado : {{galeria.created}}
       </span>
- 		<h2 style="font-family: sans-serif;
-  color: #F4F7F9;
-  font-size: 47px;
-  text-align: center;
-  background-color: rgb(0, 67, 122);
-  padding: 10px;">{{galeria.titulo}}</h2>
-      <div class="card-content" style="  height: auto !important;">
-    	
-    	     <div class="col s4">
-    	  {% for imagene in galeria.imagenes.all %} 
-    	  
-              <img src="{{imagene.imagen.url}}" class="materialboxed"  width="150px" height="150px" style="   display: inline-block !important;" alt="">
-    	  	
-    	  	{% endfor %}
-    	  </div>
+ 		<h2 id="galTitle">{{galeria.titulo}}</h2>
+      
+    	 
+         <div class="row">
+            {% for imagene in galeria.imagenes.all %} 
+        	  <div class="col s2">
+        	   
+        	       
+                   <img src="{{imagene.imagen.url}}" class="materialboxed"  width="150px" height="150px" style="   display: inline-block !important;" alt="">
+        	       
+        	  	
+        	  </div> 
+            {% endfor %}
+         </div>
+       
     	 
      	
-     </div>
+     
             
  </div>
  <hr>

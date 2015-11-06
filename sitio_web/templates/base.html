@@ -9,10 +9,20 @@
     <link type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/animate.css" %}"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
+    
     <style>
       #container{
         background-color: #E5E5E8;
+      }
+      .fc-head{
+        background-color: #3D3EAB;
+
+      }
+      .fc-calendar{
+        background-color: #3D3EAB !important;
+      }
+      .fc-body{
+        background-color: #3D3EAB;
       }
     </style>
 <!-- Latest compiled and minified JavaScript -->
@@ -38,16 +48,19 @@
     -->
   </head>
 
-  <body style=>
+  <body>
     <!--/****** Header  *********/-->
     {% block header %}
     <header>
       
-    </style>
+    
 
               
             
-            <nav class="nav_insti">
+
+            <nav class="nav_insti " id="nav">
+
+
               <div class="nav-wrapper" style="   line-height: 76px !important;">
                
  
@@ -131,7 +144,7 @@
   
     <!--/****** Footer *********/-->
     {% block footer %}
-      <footer class="page-footer foor_pro" style="">
+      <footer class="page-footer foor_pro">
           <div class="container">
             <div class="row">
               <div class="col l4" align="left">
@@ -186,6 +199,16 @@
     <!--/****** end Footer *********/-->
 
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script>
+      $(document).ready(function(){
+        $(".nav_insti li").each(function(){
+          var href = $(this).find('a').attr('href');
+          if (href === window.location.pathname) {
+            $(this).addClass('active');
+          }
+        });
+      });
+    </script>
     <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
     <script>
         $(document).ready(function(){
@@ -195,6 +218,7 @@
           // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
           $('.modal-trigger').leanModal();
         });
+
     
     </script>
     
