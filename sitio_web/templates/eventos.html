@@ -119,50 +119,35 @@
 {% endblock %}
 
 {% block content %}
- 
- <!-- 	<div class="container">
 
- 		<div class="row">
- 			
- 			<div class="col s6">
-	 			<div class="col s4"><img src="{% static "img/evento.jpg" %}" width="30px"; height="40px;"></div>
-
-	 			<div class="col s8">
-	 				<span> 22/34/2015</span>
-	 				<h4>Evento#1</h4>
-	 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quae labore a, quaerat dignissimos itaque blanditiis obcaecati qui aut corporis, praesentium mollitia rem libero aperiam nemo ipsam. Assumenda, praesentium quo?</p>
-	 			</div>
- 			</div>
- 			<div class="col s6">
-	 			<div class="col s4">IMAGE</div>
-	 			<div class="col s8">Lorem</div>
- 			</div>
- 			
-
- 		</div>
- 	</div> -->
 <h1>Eventos</h1> 
-<div id="wrapper">
-	<div id="columns">
-		{% for evento in eventos %}
-		<div class="pin">
-			<div class="image">
-				<img src="{{ evento.imagen.url }}" />
-				<h2 class="title flow-text">{{ evento.titulo}}</h2>
-			<!-- 	<span class="date">Fecha: {{ evento.fecha }}</span>
-				<span class="hours">Hora: {{ evento.hora }}</span> -->
-			</div>
-			
+{% if eventos %}
+		<div id="wrapper">
+			<div id="columns">
+				{% for evento in eventos %}
+				<div class="pin">
+					<div class="image">
+						<img src="{{ evento.imagen.url }}" />
+						<h2 class="title flow-text">{{ evento.titulo}}</h2>
+					<!-- 	<span class="date">Fecha: {{ evento.fecha }}</span>
+						<span class="hours">Hora: {{ evento.hora }}</span> -->
+					</div>
+					
+						
+					<p>
+						{{ evento.descripcion}}
+					</p>
+				</div>
+				{% endfor %}
 				
-			<p>
-				{{ evento.descripcion}}
-			</p>
+			</div>
 		</div>
-		{% endfor %}
-		
+{% else %}    
+	<div style="height: 300px; margin-top: 150px; ">
+		<h2 class="center-align" style="color: #ccc;">No hay eventos</h2>
 	</div>
-</div>
-    
+
+{% endif%}
 {% endblock %}
 
 {% block extrajs %}

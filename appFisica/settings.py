@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'curso',
     'materiales',
     'docentes',
+    'widget_tweaks',
     
 )
 
