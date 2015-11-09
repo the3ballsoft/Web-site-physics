@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modulo Docente</title>
+
+     <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/metisMenu.min.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/sb-admin-2.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/font-awesome.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/timeline.css" %}" />
+
+    {% block extracss  %}
+
+    {% endblock %}
+	
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            	<img  class=""  src="{% static "images/fisica.png" %}" width="50px" height="50px" style="position: relative;left: -265px;">
+                <a class="navbar-brand"style="  position: relative;left: 70px;">  Modulo Docente Area de Fisica</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+               
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{request.user}} | 
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Mi Perfil</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/docentes/logout/"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu" style="  position: relative;top: 40px;">
+                       
+                        <li style="  border-top: 1px solid #e7e7e7;">
+                            <a href="/docentes/home/"><i class="fa fa-home fa-fw"></i> Inicio</a>
+                        </li>
+                       <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Material de Estudio<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Mis Materiales</a>
+                                </li>
+                                <li>
+                                    <a href="#">Crear Material</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Eventos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Mis Eventos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Crear Evento</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-globe fa-fw"></i> Notcias<span class="fa arrow"></span></a>
+
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Mis Noticias</a>
+                                </li>
+                                <li>
+                                    <a href="#">Crear Noticia</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+      
+  
+  
+     
+        <div id="page-wrapper">
+            <div class="container-fluid">
+             {% block content %}
+                
+                {% endblock %}  
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+       
+
+    </div>
+     <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+    <!-- /#wrapper -->
+ 	<script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    
+	 <script type="text/javascript" src="{% static "js/metisMenu.js" %}"></script>
+    <!-- Custom Theme JavaScript -->
+	 <script type="text/javascript" src="{% static "js/sb-admin-2.js" %}"></script>
+		{% block extrajs  %}
+    {% endblock %}
+</body>
+
+</html>
