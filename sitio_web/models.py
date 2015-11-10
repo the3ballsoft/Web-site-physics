@@ -51,7 +51,7 @@ class Evento(models.Model):
 	descripcion = models.TextField()
 	imagen = models.ImageField(upload_to="eventos/", verbose_name="Evento")
 	fecha = models.DateTimeField()
-	hora =  models.TimeField()
+	
 
 	def __unicode__(self):
 		return self.titulo

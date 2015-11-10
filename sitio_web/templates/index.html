@@ -4,48 +4,55 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
+<style>
+  #imgs{
+    position: relative;
+    z-index: 1;
+  }
+  #sentence{
+   position: absolute;
+   top: 350px;
+   right: 200px;
+
+   z-index: 2;
+  }
+
+</style>
 
 
 {% endblock %}
 
 {% block content %}
   <!-- beginSlider -->
-    <section style="border-bottom: 3px solid rgb(202, 135, 61);border-top: 3px solid rgb(142, 19, 21);">
-       <div class="slider">
+    <section style="border-bottom: 3px solid rgb(202, 135, 61);border-top: 3px solid rgb(142, 19, 21);" id="imgs">
+       <div class="slider" >
           <ul class="slides">
           
               <li>
                 <img src="{% static "img/photo1.jpg"%}"> <!-- random image -->
-                <div class="caption center-align">
-                  <h3>This is our big Tagline!</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                
               </li>
               <li>
                 <img src="{% static "img/photo2.jpg"%}"> <!-- random image -->
-                <div class="caption left-align">
-                  <h3>Left Aligned Caption</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+               
               </li>
               <li>
                 <img src="{% static "img/photo3.jpg"%}"> <!-- random image -->
-                <div class="caption right-align">
-                  <h3>Right Aligned Caption</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                
               </li>
               <li>
                 <img src="{% static "img/photo4.jpg"%}"> <!-- random image -->
-                <div class="caption center-align">
-                  <h3>This is our big Tagline!</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                
               </li>
           </ul>
+          
         </div>
+         <div  id="sentence">
+                  <h2  style="color: #fff; text-align: center;font-size: 30px;font-style:italic;">"La unidad es la variedad, y la variedad en la unidad es la ley suprema del universo"</h2>
+                  <h5 class="light grey-text text-lighten-3 center-align">-Isaac Newton</h5>
+          </div>
     </section>
-    <!-- endslider  -->
+   
 
     
     
@@ -55,7 +62,7 @@
         <div class="col s3">
           <div class="icon-block" style="text-align: center;">
             <h2 class=" brown-text"><img src="{% static "images/presentacion.png"%}" alt=""></h2>
-            <h5 class="">Presentacion</h5>
+            <h5 class="">Presentación</h5>
 
             <p class="light " style="text-align: justify;">{% autoescape off %}{{data.presentacion}}{% endautoescape %}</p>
           </div>
@@ -64,7 +71,7 @@
         <div class="col s3">
           <div class="icon-block" style="text-align: center;">
             <h2 class=" brown-text"><img src="{% static "images/mision.png"%}" alt=""></h2>
-            <h5 class="">Mision</h5>
+            <h5 class="">Misión</h5>
 
             <p class="light " style="text-align: justify;">{% autoescape off %}{{data.mision}}{% endautoescape %}</p>
           </div>
@@ -73,7 +80,7 @@
         <div class="col s3">
           <div class="icon-block" style="text-align: center;">
             <h2 class=" brown-text"><img src="{% static "images/vision.png"%}" alt=""></h2>
-            <h5 class="">Vision</h5>
+            <h5 class="">Visión</h5>
 
             <p class="light " style="text-align: justify;">{% autoescape off %}{{data.vision}}{% endautoescape %}</p>
           </div>
@@ -83,7 +90,7 @@
             <h2 class=" brown-text"><img src="{% static "images/objetivos.png"%}" alt=""></h2>
             <h5 class="">Objetivos</h5>
 
-            <p class=" " style="font-weigth:400 !important;">{{data.objetivos}}</p>
+            <p class=" " style="font-weigth:400 !important;">{% autoescape off %}{{data.objetivos}}{% endautoescape %}</p>
           </div>
         </div>
       </div>
@@ -104,7 +111,7 @@
       <div class="col s4 ">
       <div class="card" style="border: 1px solid rgb(22, 162, 231);">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="{{ noticie.imagen.url }}">
+      <img class="activator"  style="height: 200px;" src="{{ noticie.imagen.url }}">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{noticie.titulo}}<i class="material-icons right">zoom_in</i></span>

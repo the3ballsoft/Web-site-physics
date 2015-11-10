@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Presentacion ,Noticias ,Galeria , Docentes, Social, Ubicacion, Imagen
+from .models import Presentacion ,Noticias ,Galeria , Docentes, Social, Ubicacion, Imagen, Evento
 from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
 
@@ -38,6 +38,18 @@ class PresentacionAdmin(SummernoteModelAdmin):
 
 class NoticiasAdmin(SummernoteModelAdmin):
 	list_display = ('titulo','created','modified','imagens',)
+
+	def imagens(self, obj):
+		if obj.imagen:
+			return '<img src="%s" width="400px" height="200px">' % (obj.imagen.url)
+		else:
+			return '<img src="%s" width="400px" height="200px">' % ('http://placehold.it/400x200')
+	imagens.allow_tags = True
+	imagens.admin_order_field = 'imagen'
+	imagens.short_description = 'Imagen'
+
+class EventoAdmin(SummernoteModelAdmin):
+	list_display = ('titulo','imagens',)
 
 	def imagens(self, obj):
 		if obj.imagen:
@@ -95,3 +107,4 @@ admin.site.register(Presentacion, PresentacionAdmin)
 admin.site.register(Noticias, NoticiasAdmin)
 admin.site.register(Docentes, DocentesAdmin)
 admin.site.register(Imagen)
+admin.site.register(Evento, EventoAdmin)
