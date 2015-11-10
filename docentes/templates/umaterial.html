@@ -8,7 +8,8 @@
 {% block content %}
 <div class="row">
 	 <div class="col-lg-12">
-        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Subir Material Academico </h1>
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-refresh fa-fw" ></i>Modificar Material  <a href="/docentes/material/" class="btn btn-info navbar-right" ><i class="fa fa-long-arrow-left"></i> Atras </a></h1>
+
      </div>
 </div>
  <div class="row">
@@ -17,12 +18,45 @@
                 {% endif %}
    
 {% load widget_tweaks %}
+ <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Actualizar Material Academico
+                        </div>
+                        <div class="panel-body">
+<div class="col-md-2"></div>
+<div class="col-md-8">
 <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update" />
+      <div class="form-group">
+          <label>Titulo del Material</label>
+           {{form.titulo|add_class:'form-control'|attr:"placeholder:Titulo del material"}}
+          
+      </div>
+      <div class="form-group">
+          <label>Ingrese una descripcion</label>
+           {{form.descripcion|add_class:'form-control'}}
+          
+      </div>
+       <div class="form-group">
+          <label>Selecione un archivo</label>
+           {{form.arichivo|add_class:'form-control'}}
+          
+      </div>
+       <div class="form-group">
+          <label>Seleccion un curso</label>
+           {{form.curso|add_class:'form-control'}}
+          
+      </div>
+     <input type="submit"  value="Actualizar" class="btn btn-info btn-lg btn-block"></input>
 </form>
-
+<br>
  </div>
+<div class="col-md-2"></div>
+  <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div></div></div>
+
 {% endblock %}
 
 

@@ -8,7 +8,7 @@
 {% block content %}
 <div class="row">
 	 <div class="col-lg-12">
-        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Eliminar Material </h1>
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa  fa-trash-o fa-fw" ></i>Eliminar Material </h1>
      </div>
 </div>
  <div class="row">
@@ -18,8 +18,13 @@
    
 {% load widget_tweaks %}
 <form action="" method="post">{% csrf_token %}
-    <p>Esta seguro de eliminar esta verga "{{ object }}"?</p>
-    <input type="submit" value="Confirm" />
+    
+    <div class="alert alert-danger">
+    Esta seguro de eliminar  "{{ object}}"?
+	</div>
+    <a href="/docentes/material/" class="btn btn-info"> <i class="fa fa-long-arrow-left"></i> Atras </a>
+    <input type="submit" value="Eliminar" class="btn btn-danger"></input>
+   
 </form>
  </div>
 {% endblock %}
