@@ -8,7 +8,7 @@
 {% block content %}
 <div class="row">
 	 <div class="col-lg-12">
-        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Subir Material Academico </h1>
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Eliminar Material </h1>
      </div>
 </div>
  <div class="row">
@@ -17,11 +17,10 @@
                 {% endif %}
    
 {% load widget_tweaks %}
-   <form action="." method="POST" enctype="multipart/form-data" data-ajax="false">{% csrf_token %}
-   {{ form.as_p}}
-   	<input type="submit" name="" value="submit">
-   </form>
- 	
+<form action="" method="post">{% csrf_token %}
+    <p>Esta seguro de eliminar esta verga "{{ object }}"?</p>
+    <input type="submit" value="Confirm" />
+</form>
  </div>
 {% endblock %}
 

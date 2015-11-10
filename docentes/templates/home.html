@@ -18,6 +18,7 @@
      <link type="text/css" rel="stylesheet" href="{% static "css/sb-admin-2.css" %}" />
      <link type="text/css" rel="stylesheet" href="{% static "css/font-awesome.css" %}" />
      <link type="text/css" rel="stylesheet" href="{% static "css/timeline.css" %}" />
+     <link type="text/css" rel="stylesheet" href="{% static "css/dataTables.responsive.css" %}" />
 
     {% block extracss  %}
 
@@ -138,7 +139,9 @@
     
 	 <script type="text/javascript" src="{% static "js/metisMenu.js" %}"></script>
     <!-- Custom Theme JavaScript -->
-	 <script type="text/javascript" src="{% static "js/sb-admin-2.js" %}"></script>
+     <script type="text/javascript" src="{% static "js/sb-admin-2.js" %}"></script>
+     <script type="text/javascript" src="{% static "js/jquery.dataTables.js" %}"></script>
+	 <script type="text/javascript" src="{% static "js/dataTables.bootstrap.js" %}"></script>
 		{% block extrajs  %}
     {% endblock %}
 </body>

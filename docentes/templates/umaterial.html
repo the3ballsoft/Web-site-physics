@@ -17,11 +17,11 @@
                 {% endif %}
    
 {% load widget_tweaks %}
-   <form action="." method="POST" enctype="multipart/form-data" data-ajax="false">{% csrf_token %}
-   {{ form.as_p}}
-   	<input type="submit" name="" value="submit">
-   </form>
- 	
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
+
  </div>
 {% endblock %}
 

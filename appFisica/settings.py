@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'materiales',
     'docentes',
     'widget_tweaks',
+    'debug_toolbar',
     
 )
 
@@ -126,8 +127,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (   
     
-    os.path.join(BASE_DIR, '../../sitio_web/static'),
-    os.path.join(BASE_DIR, '../../docentes/static'),
+    os.path.join(BASE_DIR, 'sitio_web/static'),
+    os.path.join(BASE_DIR, 'docentes/static'),
 
 )
 STATICFILES_FINDERS = (

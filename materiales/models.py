@@ -7,10 +7,10 @@ from curso.models import Curso
 	
 
 class Material(TimeStampedModel):
-	titulo = models.CharField(max_length=255)
+	titulo = models.CharField(max_length=255, blank=True, null=True)
 	descripcion = models.TextField()
-	arichivo = models.FileField(upload_to='materiales/')
-	curso =  models.ManyToManyField(Curso)
+	arichivo = models.FileField(upload_to='materiales/', blank=True, null=True)
+	curso =  models.ForeignKey(Curso)
 	docente = models.ForeignKey(User)
 
 	def __unicode__ (self):
