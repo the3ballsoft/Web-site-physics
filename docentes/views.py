@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView, View,UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, TemplateView, View,UpdateView, DeleteView, CreateView
 from materiales.models import Material
+from sitio_web.models import Noticias,Evento
+from profiles.models import User
 from django.shortcuts import redirect
 from django.shortcuts import render
 from .forms import CreateMaterial
@@ -11,6 +13,14 @@ from django.core.urlresolvers import reverse_lazy
 
 class HomeView(TemplateView):
 	template_name = 'index2.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(HomeView, self).get_context_data(**kwargs)
+		context['material'] = Material.objects.filter(docente = self.request.user).count()
+		context['evento'] = Evento.objects.all().count()
+		context['noticia'] = Noticias.objects.all().count()
+		print context
+		return context 
 
 class MaterialView(TemplateView):
 	template_name = 'vmaterial.html'
@@ -58,13 +68,39 @@ class MaterialDelete(DeleteView):
     success_url = '/docentes/material/'
     template_name = 'dmaterial.html'
 
-       
+class ProfilelUpdate(UpdateView):
+	model = User
+	fields = ['first_name', 'last_name', 'username','email','phone','avatar']
+	template_name = 'uperfil.html'
+	template_name_suffix = '_update_form'
+	success_url='/docente/'
 
 class EventoView(TemplateView):
 	template_name = 'veventos.html'
 
-class EventoCrearView(TemplateView):
+	def get_context_data(self, **kwargs):
+		context = super(EventoView, self).get_context_data(**kwargs)
+		context['evento'] = Evento.objects.all()
+		print context
+		return context
+
+class EventoDelete(DeleteView):
+    model = Evento
+    success_url = '/docentes/eventos/'
+    template_name = 'devento.html'
+
+class EventoUpdate(UpdateView):
+	model = Evento
+	fields = ['imagen', 'titulo', 'descripcion']
+	template_name = 'ueventos.html'
+	template_name_suffix = '_update_form'
+	success_url='/docentes/eventos/'
+
+class EventoCrearView(CreateView):
 	template_name = 'ceventos.html'
+	model = Evento
+	fields = ['titulo','descripcion','imagen']
+	success_url='/docentes/eventos/'
 
 class NoticiasView(TemplateView):
 	template_name = 'vnoticias.html'

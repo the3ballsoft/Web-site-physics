@@ -50,7 +50,7 @@ class Evento(models.Model):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	descripcion = models.TextField()
 	imagen = models.ImageField(upload_to="eventos/", verbose_name="Evento")
-	fecha = models.DateTimeField()
+	
 	
 
 	def __unicode__(self):

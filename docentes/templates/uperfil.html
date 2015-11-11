@@ -1,0 +1,87 @@
+{% extends "home.html" %}
+
+{% load staticfiles %}
+
+{% block extracss %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	 <div class="col-lg-12">
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-user fa-fw" ></i>Actualizar Mi Perfil  <a href="/docente/" class="btn btn-info navbar-right" ><i class="fa fa-long-arrow-left"></i> Atras </a></h1></h1>
+     </div>
+</div>
+ <div class="row">
+    {% if form.errors %}
+                   <div class="alert alert-danger" role="alert" align="center">
+             <a  class="alert-link">Todos los campos son obligatorios</a>
+            </div>
+                {% endif %}
+   
+   
+{% load widget_tweaks %}
+    <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Actualizar Perfil
+                        </div>
+                        <div class="panel-body">
+                        <div class="col-md-2">
+                          <img data-src="holder.js/140x140" class="img-thumbnail" alt="140x140" style="width: 140px; height: 140px;" src="{{request.user.avatar.url}}" data-holder-rendered="true">
+                        </div>
+                        
+                        <div class="col-md-10">
+
+                          <form action="." method="POST" enctype="multipart/form-data" data-ajax="false">{% csrf_token %}
+                         <div class="form-group">
+                              <label>Primer Nombre</label>
+                               {{form.first_name|add_class:'form-control'|attr:"placeholder:Pipito "}}
+                              
+                          </div>
+
+                          <div class="form-group">
+                              <label>Segundo Nombre</label>
+                               {{form.last_name|add_class:'form-control'}}
+                              
+                          </div>
+                           <div class="form-group">
+                              <label>Nombre de Usuario</label>
+                               {{form.username|add_class:'form-control'}}
+                              
+                          </div>
+                           <div class="form-group">
+                              <label>Correo Electronico</label>
+                               {{form.email|add_class:'form-control'}}
+                              
+                          </div>
+                          <div class="form-group">
+                              <label>Correo Electronico</label>
+                               {{form.phone|add_class:'form-control'}}
+                              
+                          </div>
+                          <div class="form-group">
+                              <label>Imagen de perfil</label>
+                               {{form.avatar|add_class:'form-control'}}
+                              
+                          </div>
+                        
+                          
+                          <input type="submit"  value="Actualizar" class="btn btn-info btn-lg btn-block"></input>
+                         </form>
+                         </div>
+                         
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+ 
+  
+ </div>
+ </div>
+{% endblock %}
+
+
+{% block extrajs %}
+ 
+{% endblock %}

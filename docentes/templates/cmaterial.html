@@ -8,13 +8,16 @@
 {% block content %}
 <div class="row">
 	 <div class="col-lg-12">
-        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Subir Material Academico </h1>
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-upload fa-fw" ></i>Subir Material Academico  <a href="/docentes/material/" class="btn btn-info navbar-right" ><i class="fa fa-long-arrow-left"></i> Atras </a></h1> </h1>
      </div>
 </div>
  <div class="row">
-   {% if form.errors %}
-                    <p>Your username and password didn't match. Please try again.</p>
+    {% if form.errors %}
+                   <div class="alert alert-danger" role="alert" align="center">
+             <a  class="alert-link">Todos los campos son obligatorios</a>
+            </div>
                 {% endif %}
+   
    
 {% load widget_tweaks %}
 
@@ -30,22 +33,22 @@
                           <form action="." method="POST" enctype="multipart/form-data" data-ajax="false">{% csrf_token %}
                          <div class="form-group">
                               <label>Titulo del Material</label>
-                               {{form.titulo|add_class:'form-control'|attr:"placeholder:Titulo del material"}}
+                               {{form.titulo|add_class:'form-control'|attr:"placeholder:Titulo del material"|attr:"required"}}
                               
                           </div>
                           <div class="form-group">
                               <label>Ingrese una descripcion</label>
-                               {{form.descripcion|add_class:'form-control'}}
+                               {{form.descripcion|add_class:'form-control'|attr:"required"}}
                               
                           </div>
                            <div class="form-group">
                               <label>Selecione un archivo</label>
-                               {{form.arichivo|add_class:'form-control'}}
+                               {{form.arichivo|add_class:'form-control'|attr:"required"}}
                               
                           </div>
                            <div class="form-group">
                               <label>Seleccion un curso</label>
-                               {{form.curso|add_class:'form-control'}}
+                               {{form.curso|add_class:'form-control'|attr:"required"}}
                               
                           </div>
                         

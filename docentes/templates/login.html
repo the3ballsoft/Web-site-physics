@@ -116,8 +116,8 @@
                                             <div class="login_result"></div>
                                         </label>
                                         
-                                        {{login_form.username|add_class:'form-control'|attr:"placeholder:Nombre de usuario"}}
-                                        {{login_form.password|add_class:'form-control'|attr:"placeholder:contraseña"}}
+                                        {{login_form.username|add_class:'form-control'|attr:"placeholder:Nombre de usuario"|attr:"required"}}
+                                        {{login_form.password|add_class:'form-control'|attr:"placeholder:contraseña"|attr:"required"}}
                                         
                                         <br>
                                         <input class="btn btn-lg btn-primary btn-block" type="submit" id="login" value="Ingresar »">

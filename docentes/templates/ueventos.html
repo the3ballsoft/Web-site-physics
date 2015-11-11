@@ -8,48 +8,41 @@
 {% block content %}
 <div class="row">
 	 <div class="col-lg-12">
-        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-refresh fa-fw" ></i>Modificar Material  <a href="/docentes/material/" class="btn btn-info navbar-right" ><i class="fa fa-long-arrow-left"></i> Atras </a></h1>
+        <h1 class="page-header" style="  color: #337ab7;text-transform: capitalize;"><i class="fa fa-refresh fa-fw" ></i>Modificar Evento  <a href="/docentes/material/" class="btn btn-info navbar-right" ><i class="fa fa-long-arrow-left"></i> Atras </a></h1>
 
      </div>
 </div>
  <div class="row">
    {% if form.errors %}
-                   <div class="alert alert-danger" role="alert" align="center">
-             <a  class="alert-link">Todos los campos son obligatorios </a>
-            </div>
+                    <p>Your username and password didn't match. Please try again.</p>
                 {% endif %}
-   
    
 {% load widget_tweaks %}
  <div class="col-lg-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            Actualizar Material Academico
+                            Actualizar Evento 
                         </div>
                         <div class="panel-body">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<form action="" method="post">{% csrf_token %}
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
       <div class="form-group">
-          <label>Titulo del Material</label>
-           {{form.titulo|add_class:'form-control'|attr:"placeholder:Titulo del material"|attr:"required"}}
+          <label>Imagen del Evento</label>
+           {{form.imagen|add_class:'form-control'}}
           
       </div>
       <div class="form-group">
-          <label>Ingrese una descripcion</label>
-           {{form.descripcion|add_class:'form-control'|attr:"required"}}
+          <label>Titulo</label>
+           {{form.titulo|add_class:'form-control'|attr:"required"}}
           
       </div>
        <div class="form-group">
           <label>Selecione un archivo</label>
-           {{form.arichivo|add_class:'form-control'}}
+           {{form.descripcion|add_class:'form-control'|attr:"required"}}
           
       </div>
-       <div class="form-group">
-          <label>Seleccion un curso</label>
-           {{form.curso|add_class:'form-control'|attr:"required"}}
-          
-      </div>
+      
      <input type="submit"  value="Actualizar" class="btn btn-info btn-lg btn-block"></input>
 </form>
 <br>
