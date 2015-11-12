@@ -105,5 +105,8 @@ class EventoCrearView(CreateView):
 class NoticiasView(TemplateView):
 	template_name = 'vnoticias.html'
 
-class NoticiasCrearView(TemplateView):
+class NoticiasCrearView(CreateView):
 	template_name = 'cnoticias.html'
+	model = Noticias
+	fields = ['titulo','informacion','imagen']
+	success_url='/docentes/noticias/'
