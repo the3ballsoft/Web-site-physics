@@ -23,4 +23,6 @@ urlpatterns = patterns('',
     
     url(r'^docentes/noticias/$', views.NoticiasView.as_view(), name="docentes-noticias"),
     url(r'^docentes/crearnoticias/$', views.NoticiasCrearView.as_view(), name="docentes-crearnoticias"),
+    url(r'^docentes/eliminarnoticia/(?P<pk>[\w-]+)/$', views.NoticiaDelete.as_view(), name="docentes-eliminarnoticia"),
+    url(r'^docentes/actualizarnoticia/(?P<pk>[\w-]+)/$', views.NoticiaUpdate.as_view(), name="docentes-actualizarnoticia"),
 )

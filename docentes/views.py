@@ -105,8 +105,27 @@ class EventoCrearView(CreateView):
 class NoticiasView(TemplateView):
 	template_name = 'vnoticias.html'
 
+	def get_context_data(self, **kwargs):
+		context = super(NoticiasView, self).get_context_data(**kwargs)
+		context['noticias'] = Noticias.objects.all()
+		print context
+		return context
+
+
 class NoticiasCrearView(CreateView):
 	template_name = 'cnoticias.html'
 	model = Noticias
 	fields = ['titulo','informacion','imagen']
+	success_url='/docentes/noticias/'
+
+class NoticiaDelete(DeleteView):
+    model = Noticias
+    success_url = '/docentes/noticias/'
+    template_name = 'dnoticia.html'
+
+class NoticiaUpdate(UpdateView):
+	model = Noticias
+	fields = ['titulo', 'informacion', 'imagen']
+	template_name = 'unoticias.html'
+	template_name_suffix = '_update_form'
 	success_url='/docentes/noticias/'
