@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for appFisica project.
 
@@ -31,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,10 +41,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_summernote',
     'location_field',
-    'sitio_web',
-    'profiles',
-    'curso',
-    'materiales',
+    'sitio_web.apps.WebSite',
+    'profiles.apps.Profile',
+    'curso.apps.Curso',
+    'materiales.apps.Material',
     'docentes',
     'widget_tweaks',
     'debug_toolbar',
