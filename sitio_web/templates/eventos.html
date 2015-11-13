@@ -9,37 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-
-{% if eventos %}
-<h1>Eventos</h1> 
-		<div id="wrapper">
-			<div id="columns">
-				{% for evento in eventos %}
-				<div class="pin">
-					<div class="image">
-						<img src="{{ evento.imagen.url }}" />
-						<h2 class="title flow-text">{{ evento.titulo}}</h2>
-					<!-- 	<span class="date">Fecha: {{ evento.fecha }}</span>
-						<span class="hours">Hora: {{ evento.hora }}</span> -->
-					</div>
-					
-						
-					<p>
-						{{ evento.descripcion}}
-					</p>
-				</div>
-				{% endfor %}
-				
-			</div>
-		</div>
-{% else %}    
-	<div style="height: 300px; margin-top: 150px; ">
-		<h2 class="center-align" style="color: #ccc;">No hay eventos</h2>
-	</div>
-
-{% endif%}
-=======
 <div class="container">
   
   <div class="row">
@@ -50,7 +19,7 @@
                     <div class="card large">
                       <div class="card-image">
                         <img src="{{ evento.imagen.url }}">
-                        <span class="card-title" style="  background-color: rgba(5, 5, 5, 0.54);font-weight: bold;color: white;">{{evento.titulo}}</span>
+                        <span class="card-title" style=" width:100%; background-color: rgba(5, 5, 5, 0.54);font-weight: bold;color: white;" class="center-align">{{evento.titulo}}</span>
                       </div>
                       <div class="card-content">
                         <p>{% autoescape off %}{{ evento.descripcion }}{% endautoescape %}</p>
@@ -72,7 +41,7 @@
   </div>
 </div>
       
->>>>>>> 2110c27668384a323e5dafa250ca81966f1f1bd4
+
 {% endblock %}
 
 {% block extrajs %}

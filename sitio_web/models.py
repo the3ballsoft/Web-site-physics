@@ -31,6 +31,13 @@ class Noticias(TimeStampedModel):
 	def __unicode__(self):
 		return self.titulo
 	
+class Laboratorio(TimeStampedModel):
+	titulo = models.CharField(max_length=255, blank=True, null=True)
+	informacion = models.TextField()
+	imagen = models.ImageField(upload_to="laboratorios/",verbose_name="Laboratorios" , blank=True, null=True)
+ 
+	def __unicode__(self):
+		return self.titulo
 
 class Imagen(TimeStampedModel):
 	imagen = models.ImageField(upload_to="galeria/",verbose_name="Galeria")
