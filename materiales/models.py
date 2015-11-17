@@ -15,7 +15,7 @@ TIPO = (
 	
 
 class Material(TimeStampedModel):
-	titulo = models.CharField(max_length=255, blank=True, null=True)
+	titulo = models.CharField(max_length=255)
 	descripcion = models.TextField()
 	arichivo = models.FileField(upload_to='materiales/', blank=True, null=True)
 	tipo=models.CharField(max_length=20, choices=TIPO, default='taller')
