@@ -5,6 +5,8 @@
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
 <link rel="stylesheet" href="{% static "css/css-sliderSmall.css" %}">
+<link type="text/css" rel="stylesheet" href="{% static "css/jquery.more.css" %}"  media="screen,projection"/>
+
 <style>
   #imgs{
     position: relative;
@@ -75,45 +77,67 @@
          <div  id="sentence">
                   <h2  style="color: #fff; text-align: center;font-size: 30px;font-style:italic;">"La unidad es la variedad, y la variedad en la unidad es la ley suprema del universo"</h2>
                   <h5 class="light grey-text text-lighten-3 center-align" style="font-weight: bold;">-Isaac Newton</h5>
+         </div>
+         {% if  noticias %}
+              <div>
+                <div id="header"><h4>Noticias recientes</h4></div>
+                <div id="slider">
+                  <input checked type="radio" name="slider" id="slide1" />
+                  <input type="radio" name="slider" id="slide2" />
+                  <input type="radio" name="slider" id="slide3" />
+                  <input type="radio" name="slider" id="slide4" />
+                  <input type="radio" name="slider" id="slide5" />
+                  <div id="slides" class="z-depth-4">
+                  <div id="overflow">
+                  <div class="inner">
+                  {% for noticie in noticias %}
+                      
+                      <article style="background-color: F1F1F1;" >
+                          <div class="row">
+                              <div class="col s5">
+                                <img width="300px;" height="100px;" src="{{noticie.imagen.url}}" />
+                              </div>
+                              <div class="col s7">
+                                <h5 style="text-align: justify;">{{noticie.titulo}}</h5>
+                                
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col s12">
+                              <p class="truncate">{% autoescape  off %}{{ noticie.informacion }} {% endautoescape %}</p>
+                            </div>
+                          </div>
+                      </article>
+                 {% endfor %}
+                    </div>
+                    </div>
+                    </div>
+                    <div id="controls">
+                      {% for noticie in noticias %}
+                        <label for="slide{{forloop.counter}}"></label>
+                      {% endfor %}
+                    </div>
+                    <div id="active">
+                      {% for noticie in noticias %}
+                        <label for="slide{{forloop.counter}}"></label>
+                      {% endfor %}
+                    </div>
+              </div>
           </div>
-          <div id="header"><h4>Noticias recientes</h4></div>
-                  <div id="slider">
-            <input checked type="radio" name="slider" id="slide1" />
-            <input type="radio" name="slider" id="slide2" />
-            <input type="radio" name="slider" id="slide3" />
-            <input type="radio" name="slider" id="slide4" />
-            <input type="radio" name="slider" id="slide5" />
-            <div id="slides" class="z-depth-4">
-            <div id="overflow">
-            <div class="inner">
-            {% for noticie in noticias %}
-                
-                <article style="background-color: F1F1F1;" >
-                <div class="row">
-                    <div class="col s5">
-                      <img width="300px;" height="100px;" src="{{noticie.imagen.url}}" />
-                    </div>
-                    <div class="col s7">
-                      <h5>{{noticie.titulo}}</h5>
-                      <a href="#">Autor</a>
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col s12">
-                    <p >Lorem ipsum dolor sit amet, consectetur </p>
-                  </div>
-                </div>
-                
-                </article>
-           {% endfor %}
-            </div>
-            </div>
-            </div>
-            <div id="controls">
-            <label for="slide1"></label><label for="slide2"></label><label for="slide3"></label><label for="slide4"></label><label for="slide5"></label></div>
-            <div id="active">
-            <label for="slide1"></label><label for="slide2"></label><label for="slide3"></label><label for="slide4"></label><label for="slide5"></label></div>
-      </div>
+           {% else %}
+            <style type="text/css">
+               #sentence{
+                 position: absolute;
+                 bottom: 300px;
+                 left: 350px;
+                 z-index: 2;
+                 background-color: rgba(0, 0, 0, 0.42);
+                 border-radius: 20px;
+                 width: 800px;
+                }
+            </style>
+
+          {% endif%}
     </section>
    
 
@@ -209,7 +233,10 @@
 {% endblock %}
 
 {% block extrajs %}
+<script type="text/javascript" src="{% static "js/jquery.plugin.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/jquery.more.min.js" %}"></script>
  <script>
+    $('#information').more({length:20});
     $(document).ready(function(){
         $('.parallax').parallax();
     });

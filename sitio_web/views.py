@@ -62,8 +62,9 @@ class MaterialesView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super(MaterialesView, self).get_context_data(**kwargs)
+
 		context['materiales'] = Material.objects.all()
-		
+
 		return context
 
 
