@@ -10,22 +10,28 @@
 
 {% block content %}
 <div class="container">
-	
+	 <div class="row" style="margin-top: 20px;">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a href="#test1">Fisica Mecánica</a></li>
+          <li class="tab col s3"><a class="active" href="#test2">Electricidad y Magnetismo</a></li>
+          <li class="tab col s3"><a href="#test3">Calor y Ondas</a></li>
+        </ul>
+      </div>
+      
+    </div>
  <div class="row">
         <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
+          <ul class="collection with-header">
+            {% for material in materiales_electricidad %}
+              <li class="collection-item">{{material.titulo}}</li>
+              <li class="collection-item">{% autoescape off %} {{ material.descripcion}} {% endautoescape %}</li>
+              <li class="collection-item">{{material.arichivo}}</li>
+              <li class="collection-item">{{material.tipo}}</li>
+              <li class="collection-item">{{material.curso}}</li>
+            {% endfor %}
+            
+          </ul>
         </div>
       </div>	
 </div>

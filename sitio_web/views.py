@@ -62,7 +62,10 @@ class MaterialesView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super(MaterialesView, self).get_context_data(**kwargs)
-		context['materiales'] = Material.objects.all()
+		context['materiales_electricidad'] = Material.objects.filter(curso__nombre= "Electricidad y magnetismo")
+		context['materiales_calor'] = Material.objects.filter(curso__nombre= "Calor y Ondas")
+		context['materiales_mecanica'] = Material.objects.filter(curso__nombre= "Mecanica")
+
 		print context
 		return context
 
