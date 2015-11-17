@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from location_field.models.plain import PlainLocationField
 
@@ -20,6 +21,10 @@ class Presentacion(models.Model):
 	objetivos = models.TextField()
 	reglamentacion = models.TextField()
 
+	class Meta:
+		verbose_name = "Presentacion del Area"
+		verbose_name_plural = "Presentacion del Area"
+
 	def __unicode__(self):
 		return 'Informacion basica'
 
@@ -27,6 +32,10 @@ class Noticias(TimeStampedModel):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	informacion = models.TextField()
 	imagen = models.ImageField(upload_to="noticias/",verbose_name="Noticias" , blank=True, null=True)
+
+	class Meta:
+		verbose_name = "Noticia"
+		verbose_name_plural = "Noticias"
  
 	def __unicode__(self):
 		return self.titulo
@@ -35,12 +44,20 @@ class Noticias(TimeStampedModel):
 class Imagen(TimeStampedModel):
 	imagen = models.ImageField(upload_to="galeria/",verbose_name="Galeria")
 
+	class Meta:
+		verbose_name = "Imagen"
+		verbose_name_plural = "Imagenes"
+
 	def __unicode__(self):
 		return self.imagen.name
 
 class Galeria(TimeStampedModel):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	imagenes =  models.ManyToManyField(Imagen)
+
+	class Meta:
+		verbose_name = "Galeria de Imagenes"
+		verbose_name_plural = "Galerias de Imagenes"
 
 	def __unicode__(self):
 		return self.titulo
@@ -50,6 +67,10 @@ class Evento(models.Model):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	descripcion = models.TextField()
 	imagen = models.ImageField(upload_to="eventos/", verbose_name="Evento")
+
+	class Meta:
+		verbose_name = "Programar Evento"
+		verbose_name_plural = "Programacion de Eventos"
 	
 	
 
@@ -64,12 +85,20 @@ class Docentes(models.Model):
 	correo = models.CharField(max_length=255, blank=True, null=True)
 	telefono = models.CharField(max_length=255, blank=True, null=True)
 
+	class Meta:
+		verbose_name = "Planta Docente"
+		verbose_name_plural = "Planta Docente"
+
 	def __unicode__(self):
 		return self.nombre
 
 class Social(models.Model):
 	nombre = models.CharField(max_length=255, blank=True, null=True)
 	link = models.CharField(max_length=255, blank=True, null=True)
+
+	class Meta:
+		verbose_name = "Red Social"
+		verbose_name_plural = "Redes Sociales"
 
 	def __unicode__(self):
 		return self.nombre
@@ -78,6 +107,10 @@ class Social(models.Model):
 class Ubicacion(models.Model):
 	ciudad = models.CharField(max_length=255)
 	localizacion = PlainLocationField(based_fields=[ciudad], zoom=15)
+
+	class Meta:
+		verbose_name = "Ubicacion de la Universidad"
+		verbose_name_plural = "Ubicacion de la Universidad"
 
 	def __unicode__(self):
 		return self.ciudad

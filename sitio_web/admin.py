@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from .models import Presentacion ,Noticias ,Galeria , Docentes, Social, Ubicacion, Imagen, Evento
 from django_summernote.admin import SummernoteModelAdmin

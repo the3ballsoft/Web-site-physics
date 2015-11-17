@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View,UpdateView, DeleteView, CreateView
 from materiales.models import Material

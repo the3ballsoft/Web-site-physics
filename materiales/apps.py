@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 class Material(AppConfig):
     name = 'materiales'
-    verbose_name = 'Administración de Material Academico'
+    verbose_name = 'Administracion de Material Academico'

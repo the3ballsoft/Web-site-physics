@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from sitio_web.models import TimeStampedModel
 from profiles.models import User
@@ -12,6 +13,10 @@ class Material(TimeStampedModel):
 	arichivo = models.FileField(upload_to='materiales/', blank=True, null=True)
 	curso =  models.ForeignKey(Curso)
 	docente = models.ForeignKey(User)
+
+	class Meta:
+		verbose_name = 'Material Academico'
+		verbose_name_plural = 'Materiales Academicos '
 
 	def __unicode__ (self):
 		return self.titulo

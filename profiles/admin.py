@@ -35,7 +35,7 @@ class UserAdmin(UserAdmin):
         ),
     )
 
-    list_display = ('username', 'fullname', 'email', 'cedula', 'phone', 'is_active', 'is_staff','es_docente','getimagenes',)
+    list_display = ('imagens','username', 'fullname', 'email', 'cedula', 'phone', 'is_active', 'is_staff','es_docente',)
     list_filter = ('is_active','is_staff','es_docente', )
     search_fields = ('email', 'phone' 'cedula','first_name', 'last_name',)
     ordering = ('first_name', 'email',)
@@ -48,14 +48,15 @@ class UserAdmin(UserAdmin):
     fullname.admin_order_field = 'first_name'
 
 
-    def getimagenes(self, obj):
-    	if obj.avatar:
-    		return '<img src="%s" width="80px" height="80px">' % (obj.avatar.url)
-    	else:
-    		return '<img src="%s" width="80px" height="80px">' % ('http://placehold.it/80x80s')
-	getimagenes.allow.tags = True
-	getimagenes.admin_order_field = 'imagen'
-	getimagenes.short_description = 'Imagen'
+    def imagens(self, obj):
+        if obj.avatar:
+            return '<img src="%s" width="80px" height="80px">' % (obj.avatar.url)
+        else:
+            return '<img src="%s" width="80px" height="80px">' % ('http://placehold.it/80x80')
+    imagens.allow_tags = True
+    imagens.admin_order_field = 'imagen'
+    imagens.short_description = 'Imagen'
+
 
 
 admin.site.unregister(Group)

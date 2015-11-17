@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 class Profile(AppConfig):
     name = 'profiles'
-    verbose_name = 'Administración de Usuarios y Docentes'
+    verbose_name = 'Administracion de Usuarios y Docentes'
