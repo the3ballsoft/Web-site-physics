@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block content %}
+ {% if  galerias %}
  <hr>
 {% for galeria in galerias %}
  <div class="card large" style="margin-top: 15px;height: auto;">
@@ -45,7 +46,14 @@
             
  </div>
  <hr>
+
  {% endfor %}
+
+  {% else %}    
+    <div style="height: 300px; margin-top: 150px; ">
+      <h2 class="center-align" style="color: #ccc;">No hay ninguna galeria de imagenes</h2>
+    </div>
+  {% endif%}
       
 {% endblock %}
 

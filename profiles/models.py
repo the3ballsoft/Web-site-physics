@@ -8,7 +8,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=255, blank=True, null=True, verbose_name="telefono")
     cedula = models.CharField(max_length=255, blank=True, null=True, verbose_name="cedula")
     es_docente = models.BooleanField(default=True)
-    avatar = models.ImageField(upload_to="docentes/",verbose_name="docentes")
+    avatar = models.ImageField(upload_to="docentes/",blank=True, null=True,verbose_name="docentes")
 
     class Meta:
     	verbose_name = "Perfil de Usuario"

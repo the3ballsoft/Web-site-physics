@@ -18,9 +18,9 @@
       <section id="pinBoot" style="margin-top: 20px;">
       {% for noticia in noticias %}
           <article class="white-panel"><img  id="img" src="{{ noticia.imagen.url }}" alt="">
-            <h4>{{ noticia.titulo}}</h4>
+            <h4 class="flow-text">{{ noticia.titulo}}</h4>
             <span>{{ noticia.created}}</span>
-            <p>{% autoescape off %} {{ noticia.informacion }}{% endautoescape %}</p>
+            <p>{% autoescape off %}{{ noticia.informacion }}{% endautoescape %}</p>
           </article>
       {% endfor %}
 

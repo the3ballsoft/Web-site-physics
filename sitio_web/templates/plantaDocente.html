@@ -6,7 +6,7 @@
 
 {% endblock %}
 {% block content %}
-
+  {% if  docentes %}
 <div class="container" style="padding-top: 40px">
 	<div class="row">
 		<h2 style="font-family: sans-serif; color:#0E5690;font-size:47px;   text-align: center;">Nuestra Planta Docente</h2>
@@ -31,6 +31,11 @@
 		
 	</div>
 </div>
+ {% else %}    
+    <div style="height: 300px; margin-top: 150px; ">
+      <h2 class="center-align" style="color: #ccc;">No hay docentes</h2>
+    </div>
+  {% endif%}
 {% endblock %}
 {% block extrajs %}
 {% endblock %}

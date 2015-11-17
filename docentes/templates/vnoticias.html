@@ -67,5 +67,18 @@
 
 
 {% block extrajs %}
+<script type="text/javascript">
+
+ $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true,
+         language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.10/i18n/Spanish.json"
+            },
+        });
+    });
+
+
+ </script>
  
 {% endblock %}
