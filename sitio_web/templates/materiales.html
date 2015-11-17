@@ -9,29 +9,233 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+
+
+ <div class="row" style="margin-top:10px;">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Talleres</a></li>
+        <li class="tab col s3"><a  href="#test2">Quiz</a></li>
+        <li class="tab col s3"><a href="#test3">Parciales</a></li>
+        <li class="tab col s3"><a href="#test4">Guias de Laboratorios</a></li>
+        <li class="tab col s3"><a href="#test5">Material de Estudio</a></li>
+        <li class="tab col s3"><a href="#test6">Lecturas</a></li>
+        
+      </ul>
+    </div>
+    </div>
+    
 	
- <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>	
-</div>
+
+    <div id="test1" class="col s12">
+	
+     <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'taller' %}
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+   
+	
+	{% endif %}
+    {% endfor %}
+  </ul>
+ 
+
+    </div>
+   
+    <div id="test2" class="col s12">
+     <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'quiz' %}
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+  
+	{% endif %}
+    {% endfor %}
+  </ul>
+ 
+
+    	
+    </div>
+   
+    <div id="test3" class="col s12">
+    	     <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'parcial' %}
+
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+    
+	{% endif %}
+    {% endfor %}
+  </ul>
+    </div>
+   
+    <div id="test4" class="col s12">
+    	  <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'guia de laboratorio' %}
+
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+    
+	{% endif %}
+    {% endfor %}
+  </ul>
+    </div>
+   
+    <div id="test5" class="col s12">
+    	  <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'material de estudio' %}
+
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+    
+	{% endif %}
+    {% endfor %}
+  </ul>
+    </div>
+     
+       <div id="test6" class="col s12">
+       	 <ul class="collapsible popout" data-collapsible="accordion">
+   
+   {% for material in materiales %}
+	{% if material.tipo == 'lecturas' %}
+
+
+    <li>
+      <div class="collapsible-header" style="  padding: 0;"><i class="material-icons">description</i>Titulo : {{material.titulo}} - docente : {{material.docente}} - Asignatura : {{material.curso}}</div>
+      <div class="collapsible-body">
+      	 <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle red">zoom_in</i>
+      <span class="title">TItulo :{{material.titulo}}</span>
+      <p style="  padding: 0;"> Descripcion : {{material.descripcion}}<br>
+        Asignatura : {{material.curso}}  <br>
+        Docente : {{material.docente}}
+
+      </p>
+      <span>Fecha de Creacion : {{material.created}}</span>
+      <a href="{{material.arichivo.url}}" class="secondary-content" target="_blank"><i class="material-icons">system_update_alt</i></a>
+    </li>
+  </ul>
+            
+      </div>
+    </li>
+    
+	{% endif %}
+    {% endfor %}
+  </ul>
+       </div> 
       
+ 
 {% endblock %}
 
 {% block extrajs %}
+
+<script type="text/javascript">
+	 $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+        
+</script>
 
 {% endblock %}

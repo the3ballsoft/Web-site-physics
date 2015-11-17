@@ -10,6 +10,7 @@ TIPO = (
    ('taller', 'Taller'),
    ('guia de laboratorio', 'Guia de Laboratorio'),
    ('material de estudio', 'Material de estudio'),
+   ('lecturas', 'Lecturas'),
 )
 	
 

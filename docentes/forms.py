@@ -15,4 +15,4 @@ class CreateMaterial(forms.ModelForm):
 
 	class Meta:
 		model = Material
-		fields = ('titulo', 'descripcion', 'arichivo','curso')
+		fields = ('titulo', 'descripcion', 'arichivo','curso','tipo',)

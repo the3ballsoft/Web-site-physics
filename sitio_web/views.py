@@ -15,7 +15,7 @@ class HomeView(TemplateView):
 		context = super(HomeView, self).get_context_data(**kwargs)
 		context['data'] = Presentacion.objects.get(pk=1)
 		context['noticias'] = Noticias.objects.all()[:5]
-		print context
+		
 		return context
 
 
@@ -36,7 +36,7 @@ class NoticiasView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(NoticiasView, self).get_context_data(**kwargs)
 		context['noticias'] = Noticias.objects.all()
-		print context
+		
 		return context 
 
 class CursosView(TemplateView):
@@ -63,7 +63,7 @@ class MaterialesView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(MaterialesView, self).get_context_data(**kwargs)
 		context['materiales'] = Material.objects.all()
-		print context
+		
 		return context
 
 
@@ -83,7 +83,7 @@ class GaleriaView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super(GaleriaView, self).get_context_data(**kwargs)
 		context['galerias'] = Galeria.objects.all()
-		print context
+		
 		return context 
 
 
