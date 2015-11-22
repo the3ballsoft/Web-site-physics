@@ -116,6 +116,14 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'profiles.User'
 
+from .email_info import *
+
+EMAIL_USE_TLS = EMAIL_USE_TLS 
+EMAIL_HOST = EMAIL_HOST
+EMAIL_PORT = EMAIL_PORT
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 

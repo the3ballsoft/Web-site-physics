@@ -3,6 +3,7 @@ from django.db import models
 from location_field.models.plain import PlainLocationField
 
 
+
 class TimeStampedModel(models.Model):
     """
     Una clase abstracta que registra la fecha de creacion y
@@ -74,6 +75,9 @@ class Evento(models.Model):
 	titulo = models.CharField(max_length=255, blank=True, null=True)
 	descripcion = models.TextField()
 	imagen = models.ImageField(upload_to="eventos/", verbose_name="Evento")
+	fecha = models.DateField( blank=True)
+	hora = models.TimeField( blank=True)
+	
 
 	class Meta:
 		verbose_name = "Programar Evento"
@@ -121,4 +125,11 @@ class Ubicacion(models.Model):
 
 	def __unicode__(self):
 		return self.ciudad
+
+class Frase(models.Model):
+	frase = models.TextField()
+	autor  = models.CharField(max_length=255, blank=True, null=True)
+
+	def __unicode__(self):
+		return self.frase
 

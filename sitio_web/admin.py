@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import Presentacion ,Noticias ,Galeria , Docentes, Social, Ubicacion, Imagen, Evento, Laboratorio
+from .models import Presentacion ,Noticias ,Galeria , Docentes, Social, Ubicacion, Imagen, Evento, Laboratorio,Frase
 from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
+
+
+
 
 class PresentacionAdmin(SummernoteModelAdmin):
 	list_display = ('represantacion','remision','revision','reobjectivos',)
@@ -50,7 +53,7 @@ class NoticiasAdmin(SummernoteModelAdmin):
 	imagens.short_description = 'Imagen'
 
 class EventoAdmin(SummernoteModelAdmin):
-	list_display = ('titulo','imagens',)
+	list_display = ('titulo','imagens','fecha','hora',)
 
 	def imagens(self, obj):
 		if obj.imagen:
@@ -112,7 +115,18 @@ class UbicacionAdmin(SummernoteModelAdmin):
 	list_display = ('ciudad','localizacion',)
 
 
+
+class fraseAdmin(admin.ModelAdmin):
+
+	list_display = ('frase','autor',)
+	def frase(self, obj):
+		return obj.frase
+	frase.admin_order_field = 'Frase'
+	frase.short_description = 'Frase'
+
+	
 admin.site.unregister(Attachment)
+admin.site.register(Frase, fraseAdmin)
 admin.site.register(Ubicacion, UbicacionAdmin)
 admin.site.register(Laboratorio, LaboratorioAdmin)
 admin.site.register(Social, SocialAdmin)

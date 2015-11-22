@@ -4,6 +4,11 @@
 
 {% block extracss %}
 <link rel="stylesheet" type="text/css" href="{% static "css/robot.css"%}">
+<style>
+	#map{
+		margin-left: 50px;
+	}
+</style>
 
 
 {% endblock %}
@@ -15,45 +20,21 @@
 			<h2 class="flow-text">Formulario de contacto</h2>
 			 <div class="contenedor" style="background-color: #fff">
 			 	<div class="formulario" >
-			 		
-		   		 	
-		   		 	<form>	
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <input  id="Nombre" type="text" class="validate">
-				          <label for="Nombre">Nombre *</label>
-				        </div>
-				       
-				      </div>
-				      <div class="row">
-				      	 <div class="input-field col s12">
-				          <input id="email" type="email" class="validate">
-				          <label for="email">Email *</label>
-				        </div>
-				      </div>
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <input  id="asunto" type="text" class="validate">
-				          <label for="asunto">Asunto *</label>
-				        </div>
-				      </div>
-				      <div class="row">
-				         <div class="input-field col s12">
-				          <textarea id="textarea1" class="materialize-textarea"></textarea>
-				          <label for="textarea1">Mensaje *</label>
-				        </div>
-				      </div>
-				     
-				       <button  class="btn waves-effect waves-light center-align" type="submit" name="action">Enviar email
+		   		  	<form method="post">
+					    {% csrf_token %}
+					    {{ form }}
+					    <button  class="btn waves-effect waves-light center-align" type="submit" name="action">Enviar email
 					    <i class="material-icons right">send</i>
 					  </button>
-				    </form>
-		   		 
+					</form>
 			 	</div>
 			 </div>	
 		</div>		
-		<div class="col s6">
-			{{ ubicacion.localizacion}}
+		<div class="col s6" >
+			<h2 class="flow-text">Localización</h2>
+			<div id="map">
+				
+			</div>
 		</div>
 	</div>
 </div>
@@ -63,5 +44,23 @@
 {% endblock %}
 
 {% block extrajs %}
+<script src="{% static "js/gmaps.min.js"%}"></script>
+<script>
 
+url = GMaps.staticMapURL({
+  size: [500, 300],
+  lat: 11.224306,
+  lng: -74.186634,
+  markers: [
+    {lat: 11.224306, lng:  -74.186634},
+    {lat: -12.045333, lng: -77.034,
+      size: 'small'},
+    {lat: -12.045633, lng: -77.022,
+      color: 'blue'}
+  ]
+});
+
+$('<img/>').attr('src', url)
+  .appendTo('#map');
+</script>
 {% endblock %}

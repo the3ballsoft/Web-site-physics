@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^eventos/$', views.EventoView.as_view(), name="evento"), #search
     url(r'^laboratorios/$', views.LaboratorioView.as_view(), name="laboratorios"), #search
     url(r'^materiales/$', views.MaterialesView.as_view(), name="materiales"), #search
-    url(r'^contactenos/$', views.ContactenosView.as_view(), name="contactenos"), #search
+    url(r'^contactenos/$',views.email,name='email'),
     url(r'^galeria/$', views.GaleriaView.as_view(), name="galeria"), #search
 
 
